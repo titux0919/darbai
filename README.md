@@ -1,3 +1,3 @@
-# darbai
+# darbai/strūkt. programavimas
 
 
