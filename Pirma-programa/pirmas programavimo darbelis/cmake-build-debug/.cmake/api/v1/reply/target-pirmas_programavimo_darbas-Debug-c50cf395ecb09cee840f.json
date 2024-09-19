@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Pirma_programa.exe"
+			"path" : "pirmas_programavimo_darbas.exe"
 		},
 		{
-			"path" : "Pirma_programa.pdb"
+			"path" : "pirmas_programavimo_darbas.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -56,7 +56,7 @@
 			]
 		}
 	],
-	"id" : "Pirma_programa::@6890427a1f51a3e7e1df",
+	"id" : "pirmas_programavimo_darbas::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -76,8 +76,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "Pirma_programa",
-	"nameOnDisk" : "Pirma_programa.exe",
+	"name" : "pirmas_programavimo_darbas",
+	"nameOnDisk" : "pirmas_programavimo_darbas.exe",
 	"paths" : 
 	{
 		"build" : ".",
