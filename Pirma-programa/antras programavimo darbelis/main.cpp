@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
 using namespace std;
-int main() {
-
+int pirmas() {
+    //pirma uzduotis
+    cout<<"----------1 uzduotis----------"<<endl;
     float pazymys1, pazymys2, pazymys3;
 
 
@@ -23,3 +24,33 @@ int main() {
 
     return 0;
 }
+
+//antra uzduotis
+int antras () {
+    cout<<"----------2 uzduotis----------"<<endl;
+
+
+
+        double average;
+
+
+        cout << "Įveskite pažymių vidurkį: ";
+        cin >> average;
+
+
+        if (average < 0) {
+            cout << "Vidurkis yra neigiamas" << std::endl;
+        } else {
+            cout << "Vidurkis yra neigiamas" << std::endl;  // Čia galite pridėti kitą pranešimą, jei vidurkis nėra neigiamas
+        }
+
+        return 0;
+    }
+    int main () {
+        // iskviesti pirmaja uzduoti
+        pirmas();
+        // iskviesti antraja uzduoti
+        antras();
+        return 0;
+    }
+
