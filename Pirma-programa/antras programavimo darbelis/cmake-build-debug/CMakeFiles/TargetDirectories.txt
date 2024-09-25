@@ -1,3 +1,3 @@
-C:/Users/s056776/CLionProjects/antras programavimo darbelis/cmake-build-debug/CMakeFiles/antras_programavimo_darbelis.dir
-C:/Users/s056776/CLionProjects/antras programavimo darbelis/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/s056776/CLionProjects/antras programavimo darbelis/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Titas/Documents/GitHub/Pirma-programa/antras programavimo darbelis/cmake-build-debug/CMakeFiles/antras_programavimo_darbelis.dir
+C:/Users/Titas/Documents/GitHub/Pirma-programa/antras programavimo darbelis/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Titas/Documents/GitHub/Pirma-programa/antras programavimo darbelis/cmake-build-debug/CMakeFiles/rebuild_cache.dir
