@@ -45,3 +45,19 @@ void pirktiValiuta(const string &valiuta, double kiekis) {
     cout << "Jūs gausite " << fixed << setprecision(2) << rezultatas << " " << valiuta << endl;
 }
 
+// Funkcija valiutos pardavimui
+void parduotiValiuta(const string &valiuta, double kiekis) {
+    double rezultatas = 0.0;
+    if (valiuta == "GBP") {
+        rezultatas = kiekis * GBP_Parduoti;
+    } else if (valiuta == "USD") {
+        rezultatas = kiekis * USD_Parduoti;
+    } else if (valiuta == "INR") {
+        rezultatas = kiekis * INR_Parduoti;
+    } else {
+        cout << "Nežinoma valiuta!" << endl;
+        return;
+    }
+    cout << "Jūs gausite " << fixed << setprecision(2) << rezultatas << " EUR" << endl;
+}
+
