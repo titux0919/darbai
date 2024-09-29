@@ -25,7 +25,7 @@ void palygintiValiuta(const string &valiuta) {
     } else if (valiuta == "INR") {
         cout << "Dabartinis INR kursas: " << INR_Bendras << " EUR" << endl;
     } else {
-        cout << "Nežinoma valiuta!" << endl;
+        cout << "Nezinoma valiuta!" << endl;
     }
 }
 
@@ -39,7 +39,7 @@ void pirktiValiuta(const string &valiuta, double kiekis) {
     } else if (valiuta == "INR") {
         rezultatas = kiekis / INR_Pirkti;
     } else {
-        cout << "Nežinoma valiuta!" << endl;
+        cout << "Nezinoma valiuta!" << endl;
         return;
     }
     cout << "Jūs gausite " << fixed << setprecision(2) << rezultatas << " " << valiuta << endl;
@@ -55,7 +55,7 @@ void parduotiValiuta(const string &valiuta, double kiekis) {
     } else if (valiuta == "INR") {
         rezultatas = kiekis * INR_Parduoti;
     } else {
-        cout << "Nežinoma valiuta!" << endl;
+        cout << "Nezinoma valiuta!" << endl;
         return;
     }
     cout << "Jūs gausite " << fixed << setprecision(2) << rezultatas << " EUR" << endl;
@@ -89,7 +89,7 @@ int main() {
         case 3:
             cout << "Iveskite valiuta pardavimui (GBP, USD, INR): ";
         cin >> valiuta;
-        cout << "Iveskite valiutos kiekį: ";
+        cout << "Iveskite valiutos kieki: ";
         cin >> kiekis;
         parduotiValiuta(valiuta, kiekis);
         break;
