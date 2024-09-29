@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// Valiutų kursai
+
 const double GBP_Bendras = 0.8593;
 const double GBP_Pirkti = 0.8450;
 const double GBP_Parduoti = 0.9060;
@@ -45,7 +45,7 @@ void pirktiValiuta(const string &valiuta, double kiekis) {
     cout << "Jūs gausite " << fixed << setprecision(2) << rezultatas << " " << valiuta << endl;
 }
 
-// Funkcija valiutos pardavimui
+
 void parduotiValiuta(const string &valiuta, double kiekis) {
     double rezultatas = 0.0;
     if (valiuta == "GBP") {
