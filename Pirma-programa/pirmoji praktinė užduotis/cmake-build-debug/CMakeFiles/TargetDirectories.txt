@@ -1,0 +1,3 @@
+C:/Users/Titas/CLionProjects/pirmoji praktinė užduotis/cmake-build-debug/CMakeFiles/pirmoji_praktin_uduotis.dir
+C:/Users/Titas/CLionProjects/pirmoji praktinė užduotis/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Titas/CLionProjects/pirmoji praktinė užduotis/cmake-build-debug/CMakeFiles/rebuild_cache.dir
