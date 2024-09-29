@@ -61,3 +61,41 @@ void parduotiValiuta(const string &valiuta, double kiekis) {
     cout << "Jūs gausite " << fixed << setprecision(2) << rezultatas << " EUR" << endl;
 }
 
+int main() {
+    int pasirinkimas;
+    string valiuta;
+    double kiekis;
+
+    cout << "Valiutu keitimo programa" << endl;
+    cout << "1. Palyginti valiutos kursa" << endl;
+    cout << "2. Pirkti valiuta" << endl;
+    cout << "3. Parduoti valiuta" << endl;
+    cout << "Iveskite pasirinkima: ";
+    cin >> pasirinkimas;
+
+    switch (pasirinkimas) {
+        case 1:
+            cout << "Iveskite valiuta palyginimui (GBP, USD, INR): ";
+        cin >> valiuta;
+        palygintiValiuta(valiuta);
+        break;
+        case 2:
+            cout << "Iveskite valiuta pirkimui (GBP, USD, INR): ";
+        cin >> valiuta;
+        cout << "Iveskite kieki eurais: ";
+        cin >> kiekis;
+        pirktiValiuta(valiuta, kiekis);
+        break;
+        case 3:
+            cout << "Iveskite valiuta pardavimui (GBP, USD, INR): ";
+        cin >> valiuta;
+        cout << "Iveskite valiutos kiekį: ";
+        cin >> kiekis;
+        parduotiValiuta(valiuta, kiekis);
+        break;
+        default:
+            cout << "Netinkamas pasirinkimas!" << endl;
+    }
+
+    return 0;
+}
