@@ -33,32 +33,32 @@ void palygintiValiuta(const string &valiuta) {
 void pirktiValiuta(const string &valiuta, double kiekis) {
     double rezultatas = 0.0;
     if (valiuta == "GBP") {
-        rezultatas = kiekis / GBP_Pirkti;
+        rezultatas = kiekis * GBP_Pirkti;
     } else if (valiuta == "USD") {
-        rezultatas = kiekis / USD_Pirkti;
+        rezultatas = kiekis * USD_Pirkti;
     } else if (valiuta == "INR") {
-        rezultatas = kiekis / INR_Pirkti;
+        rezultatas = kiekis * INR_Pirkti;
     } else {
         cout << "Nezinoma valiuta!" << endl;
         return;
     }
-    cout << "Jūs gausite " << fixed << setprecision(2) << rezultatas << " " << valiuta << endl;
+        cout << "Jus gausite " << fixed << setprecision(2) << rezultatas << " " << valiuta << endl;
 }
 
 
 void parduotiValiuta(const string &valiuta, double kiekis) {
     double rezultatas = 0.0;
     if (valiuta == "GBP") {
-        rezultatas = kiekis * GBP_Parduoti;
+        rezultatas = kiekis / GBP_Parduoti;
     } else if (valiuta == "USD") {
-        rezultatas = kiekis * USD_Parduoti;
+        rezultatas = kiekis / USD_Parduoti;
     } else if (valiuta == "INR") {
-        rezultatas = kiekis * INR_Parduoti;
+        rezultatas = kiekis / INR_Parduoti;
     } else {
         cout << "Nezinoma valiuta!" << endl;
         return;
     }
-    cout << "Jūs gausite " << fixed << setprecision(2) << rezultatas << " EUR" << endl;
+    cout << "Jus gausite " << fixed << setprecision(2) << rezultatas << " EUR" << endl;
 }
 
 int main() {
@@ -66,10 +66,12 @@ int main() {
     string valiuta;
     double kiekis;
 
+    do {
     cout << "Valiutu keitimo programa" << endl;
     cout << "1. Palyginti valiutos kursa" << endl;
     cout << "2. Pirkti valiuta" << endl;
     cout << "3. Parduoti valiuta" << endl;
+        cout << "0. Iseiti" << endl;
     cout << "Iveskite pasirinkima: ";
     cin >> pasirinkimas;
 
@@ -93,9 +95,14 @@ int main() {
         cin >> kiekis;
         parduotiValiuta(valiuta, kiekis);
         break;
+        case 0:
+            cout << "Programa baigta!" << endl;
+            break;
         default:
             cout << "Netinkamas pasirinkimas!" << endl;
     }
+    cout << endl;
+    } while (pasirinkimas != 0);
 
     return 0;
 }
