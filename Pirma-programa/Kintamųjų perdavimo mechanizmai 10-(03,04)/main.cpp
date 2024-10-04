@@ -1,0 +1,1 @@
+Kintamųjų perdavimo mechanizmai

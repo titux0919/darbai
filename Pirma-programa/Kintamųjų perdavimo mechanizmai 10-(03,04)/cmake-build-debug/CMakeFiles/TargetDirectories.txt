@@ -1,0 +1,3 @@
+C:/Users/s056776/CLionProjects/kintamuju perdavimo mechanizmai/cmake-build-debug/CMakeFiles/kintamuju_perdavimo_mechanizmai.dir
+C:/Users/s056776/CLionProjects/kintamuju perdavimo mechanizmai/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/s056776/CLionProjects/kintamuju perdavimo mechanizmai/cmake-build-debug/CMakeFiles/rebuild_cache.dir
