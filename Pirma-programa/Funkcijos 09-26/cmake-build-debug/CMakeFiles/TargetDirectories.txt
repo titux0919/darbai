@@ -1,3 +1,3 @@
-C:/Users/Titas/Documents/GitHub/Pirma-programa/Funkcijos 09-26/cmake-build-debug/CMakeFiles/Funkcijos.dir
-C:/Users/Titas/Documents/GitHub/Pirma-programa/Funkcijos 09-26/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Titas/Documents/GitHub/Pirma-programa/Funkcijos 09-26/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/s056776/Documents/GitHub/darbai/Pirma-programa/Funkcijos 09-26/cmake-build-debug/CMakeFiles/Funkcijos.dir
+C:/Users/s056776/Documents/GitHub/darbai/Pirma-programa/Funkcijos 09-26/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/s056776/Documents/GitHub/darbai/Pirma-programa/Funkcijos 09-26/cmake-build-debug/CMakeFiles/rebuild_cache.dir
