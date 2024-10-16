@@ -1,3 +1,3 @@
-C:/Users/Titas/Documents/GitHub/Pirma-programa/pirmas programavimo darbelis/cmake-build-debug/CMakeFiles/pirmas_programavimo_darbas.dir
-C:/Users/Titas/Documents/GitHub/Pirma-programa/pirmas programavimo darbelis/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Titas/Documents/GitHub/Pirma-programa/pirmas programavimo darbelis/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/s056776/Documents/GitHub/darbai/Pirma-programa/pirmas programavimo darbelis/cmake-build-debug/CMakeFiles/pirmas_programavimo_darbas.dir
+C:/Users/s056776/Documents/GitHub/darbai/Pirma-programa/pirmas programavimo darbelis/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/s056776/Documents/GitHub/darbai/Pirma-programa/pirmas programavimo darbelis/cmake-build-debug/CMakeFiles/rebuild_cache.dir
