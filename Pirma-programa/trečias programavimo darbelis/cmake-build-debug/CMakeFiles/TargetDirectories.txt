@@ -1,0 +1,3 @@
+C:/Users/s056776/CLionProjects/trečias programavimo darbelis/cmake-build-debug/CMakeFiles/treias_programavimo_darbelis.dir
+C:/Users/s056776/CLionProjects/trečias programavimo darbelis/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/s056776/CLionProjects/trečias programavimo darbelis/cmake-build-debug/CMakeFiles/rebuild_cache.dir
