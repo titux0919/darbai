@@ -1,3 +1,0 @@
-C:/Users/s056776/Documents/darbai/darbai/Pirma-programa/cmake-build-debug/CMakeFiles/Pirma_programa.dir
-C:/Users/s056776/Documents/darbai/darbai/Pirma-programa/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/s056776/Documents/darbai/darbai/Pirma-programa/cmake-build-debug/CMakeFiles/rebuild_cache.dir
