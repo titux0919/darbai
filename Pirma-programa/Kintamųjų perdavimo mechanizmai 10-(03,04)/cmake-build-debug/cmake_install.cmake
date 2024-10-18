@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/s056776/CLionProjects/kintamuju perdavimo mechanizmai
+# Install script for directory: C:/Users/s056776/Documents/GitHub/darbai/Pirma-programa/Kintamųjų perdavimo mechanizmai 10-(03,04)
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/s056776/CLionProjects/kintamuju perdavimo mechanizmai/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/s056776/Documents/GitHub/darbai/Pirma-programa/Kintamųjų perdavimo mechanizmai 10-(03,04)/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

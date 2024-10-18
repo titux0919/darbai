@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/s056776/CLionProjects/kintamuju perdavimo mechanizmai/cmake-build-debug"
+			"value" : "c:/Users/s056776/Documents/GitHub/darbai/Pirma-programa/Kintam\u0173j\u0173 perdavimo mechanizmai 10-(03,04)/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/s056776/CLionProjects/kintamuju perdavimo mechanizmai/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/s056776/Documents/GitHub/darbai/Pirma-programa/Kintam\u0173j\u0173 perdavimo mechanizmai 10-(03,04)/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/s056776/CLionProjects/kintamuju perdavimo mechanizmai"
+			"value" : "C:/Users/s056776/Documents/GitHub/darbai/Pirma-programa/Kintam\u0173j\u0173 perdavimo mechanizmai 10-(03,04)"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1291,7 +1291,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/s056776/CLionProjects/kintamuju perdavimo mechanizmai/cmake-build-debug"
+			"value" : "C:/Users/s056776/Documents/GitHub/darbai/Pirma-programa/Kintam\u0173j\u0173 perdavimo mechanizmai 10-(03,04)/cmake-build-debug"
 		},
 		{
 			"name" : "kintamuju_perdavimo_mechanizmai_IS_TOP_LEVEL",
@@ -1315,7 +1315,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/s056776/CLionProjects/kintamuju perdavimo mechanizmai"
+			"value" : "C:/Users/s056776/Documents/GitHub/darbai/Pirma-programa/Kintam\u0173j\u0173 perdavimo mechanizmai 10-(03,04)"
 		}
 	],
 	"kind" : "cache",
