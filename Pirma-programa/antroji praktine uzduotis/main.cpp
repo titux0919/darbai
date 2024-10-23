@@ -56,4 +56,63 @@ int main() {
 
     return 0;
 }
-/*
+*/
+
+/*#include <iostream>
+using namespace std;
+
+bool yraBalse(char raide) {
+    char mazosios[] = {'a', 'e', 'i', 'o', 'u'};
+    char didziosios[] = {'A', 'E', 'I', 'O', 'U'};
+
+    for (int i = 0; i < 5; i++) {
+        if (raide == mazosios[i] || raide == didziosios[i]) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+int main() {
+    char ivestis;
+    cout << "Įveskite raidę: ";
+    cin >> ivestis;
+
+    if (yraBalse(ivestis)) {
+        cout << "Tai balsė." << endl;
+    } else {
+        cout << "Tai nėra balsė." << endl;
+    }
+
+    return 0;
+}
+*/
+
+/*#include <iostream>
+using namespace std;
+
+int rastiDBD(int skaicius1, int skaicius2) {
+    while (skaicius2 != 0) {
+        int laikinas = skaicius2;
+        skaicius2 = skaicius1 % skaicius2;
+        skaicius1 = laikinas;
+    }
+    return skaicius1;
+}
+
+int main() {
+    int skaicius1, skaicius2;
+
+    cout << "Įveskite pirmą skaičių: ";
+    cin >> skaicius1;
+    cout << "Įveskite antrą skaičių: ";
+    cin >> skaicius2;
+
+    int dbd = rastiDBD(skaicius1, skaicius2);
+    cout << "Didžiausias bendras daliklis: " << dbd << endl;
+
+    return 0;
+}
+*/
+
