@@ -47,10 +47,10 @@ int main() {
                 break;
             case 0:
                 programaVeikia = false;
-                cout << "Programa baigė darbą.\n";
+                cout << "Programa baige savo darba.\n";
                 break;
             default:
-                cout << "Neteisingas pasirinkimas. Bandykite dar kartą.\n";
+                cout << "Neteisingas pasirinkimas. Bandykite dar karta.\n";
         }
     }
 
@@ -76,13 +76,13 @@ bool yraBalse(char raide) {
 
 int main() {
     char ivestis;
-    cout << "Įveskite raidę: ";
+    cout << "Iveskite raide: ";
     cin >> ivestis;
 
     if (yraBalse(ivestis)) {
-        cout << "Tai balsė." << endl;
+        cout << "Tai balse." << endl;
     } else {
-        cout << "Tai nėra balsė." << endl;
+        cout << "Tai nera balse." << endl;
     }
 
     return 0;
@@ -104,15 +104,88 @@ int rastiDBD(int skaicius1, int skaicius2) {
 int main() {
     int skaicius1, skaicius2;
 
-    cout << "Įveskite pirmą skaičių: ";
+    cout << "Iveskite pirma skaiciu: ";
     cin >> skaicius1;
-    cout << "Įveskite antrą skaičių: ";
+    cout << "Iveskite antra skaičiu: ";
     cin >> skaicius2;
 
     int dbd = rastiDBD(skaicius1, skaicius2);
-    cout << "Didžiausias bendras daliklis: " << dbd << endl;
+    cout << "Didziausias bendras daliklis: " << dbd << endl;
 
     return 0;
 }
 */
 
+/*#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int sugeneruotiSkaičių() {
+    return rand() % 100 + 1;
+}
+
+void zaidimas() {
+    int atsitiktinisSkaicius = sugeneruotiSkaicių();
+    int vartotojoAtsakymas = 0;
+
+    cout << "Atspekite atsitiktini skaičiu nuo 1 iki 100:" << endl;
+
+    while (vartotojoAtsakymas != atsitiktinisSkaicius) {
+        cout << "Iveskite savo skaiciu: ";
+        cin >> vartotojoAtsakymas;
+
+        if (vartotojoAtsakymas > atsitiktinisSkaicius) {
+            cout << "Jusu skaicius yra per didelis. Bandykite dar karta." << endl;
+        } else if (vartotojoAtsakymas < atsitiktinisSkaicius) {
+            cout << "Jusu skaicius yra per mažas. Bandykite dar karta." << endl;
+        } else {
+            cout << "Teisingai! Atspejote skaiciu: " << atsitiktinisSkaicius << "!" << endl;
+        }
+    }
+}
+
+int main() {
+    srand(static_cast<unsigned int>(time(0)));
+
+    zaidimas();
+
+    return 0;
+}
+*/
+
+/*#include <iostream>
+using namespace std;
+
+void fizzbuzz(int n) {
+    for (int i = 1; i <= n; i++) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            cout << "FizzBuzz" << endl;
+        }
+        else if (i % 3 == 0) {
+            cout << "Fizz" << endl;
+        }
+        else if (i % 5 == 0) {
+            cout << "Buzz" << endl;
+        }
+        else {
+            cout << i << endl;
+        }
+    }
+}
+
+int main() {
+    int n;
+
+    cout << "Iveskite teigiama sveikaji skaicių n: ";
+    cin >> n;
+
+    if (n > 0) {
+        fizzbuzz(n);
+    } else {
+        cout << "Prasome ivesti teigiama sveikaji skaicių." << endl;
+    }
+
+    return 0;
+}
+*/
