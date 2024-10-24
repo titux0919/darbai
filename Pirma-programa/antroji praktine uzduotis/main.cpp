@@ -45,7 +45,7 @@ void zaidimas() {
         if (vartotojoAtsakymas > atsitiktinisSkaicius) {
             cout << "Jusu skaicius yra per didelis. Bandykite dar karta." << endl;
         } else if (vartotojoAtsakymas < atsitiktinisSkaicius) {
-            cout << "Jusu skaicius yra per mažas. Bandykite dar karta." << endl;
+            cout << "Jusu skaicius yra per mazas. Bandykite dar karta." << endl;
         } else {
             cout << "Teisingai! Atspejote skaiciu: " << atsitiktinisSkaicius << "!" << endl;
         }
