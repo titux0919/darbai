@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.29"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Treioji_praktin_uduotis",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Treioji_praktin_uduotis::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Treioji_praktin_uduotis-Debug-1cea1fe36d9f5b55b181.json",
+					"name" : "Treioji_praktin_uduotis",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Titas/CLionProjects/Tre\u010dioji praktin\u0117 u\u017eduotis/cmake-build-debug",
+		"source" : "C:/Users/Titas/CLionProjects/Tre\u010dioji praktin\u0117 u\u017eduotis"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
