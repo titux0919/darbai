@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Titas/CLionProjects/Tre\u010dioji praktin\u0117 u\u017eduotis/cmake-build-debug"
+			"value" : "c:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/tre\u010dioji praktin\u0117 u\u017eduotis (pataisytas)/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Titas/CLionProjects/Tre\u010dioji praktin\u0117 u\u017eduotis/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/tre\u010dioji praktin\u0117 u\u017eduotis (pataisytas)/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Titas/CLionProjects/Tre\u010dioji praktin\u0117 u\u017eduotis"
+			"value" : "C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/tre\u010dioji praktin\u0117 u\u017eduotis (pataisytas)"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1279,7 +1279,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Titas/CLionProjects/Tre\u010dioji praktin\u0117 u\u017eduotis/cmake-build-debug"
+			"value" : "C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/tre\u010dioji praktin\u0117 u\u017eduotis (pataisytas)/cmake-build-debug"
 		},
 		{
 			"name" : "Treioji_praktin_uduotis_IS_TOP_LEVEL",
@@ -1303,7 +1303,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Titas/CLionProjects/Tre\u010dioji praktin\u0117 u\u017eduotis"
+			"value" : "C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/tre\u010dioji praktin\u0117 u\u017eduotis (pataisytas)"
 		},
 		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
