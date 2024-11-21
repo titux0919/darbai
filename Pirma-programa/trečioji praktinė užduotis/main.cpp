@@ -60,23 +60,23 @@ string decryptASCII(const string& text, const string& key) {
 void menu() {
     int choice;
     string text, key;
-    cout << "Pasirinkite šifravimo būdą:\n1. Abėcėlės šifravimas\n2. ASCII šifravimas\nJūsų pasirinkimas: ";
+    cout << "Pasirinkite sifravimo buda:\n1. Abeceles sifravimas\n2. ASCII sifravimas\nJusu pasirinkimas: ";
     cin >> choice;
     cin.ignore();
 
-    cout << "Įveskite tekstą: ";
+    cout << "Iveskite teksta: ";
     getline(cin, text);
-    cout << "Įveskite slaptąjį raktą: ";
+    cout << "Iveskite slaptaji rakta: ";
     getline(cin, key);
 
     if (choice == 1) {
         string encrypted = encryptAlphabet(text, key);
-        cout << "Užšifruotas tekstas (abėcėlė): " << encrypted << endl;
-        cout << "Atšifruotas tekstas: " << decryptAlphabet(encrypted, key) << endl;
+        cout << "Uzsifruotas tekstas (abecele): " << encrypted << endl;
+        cout << "Atsifruotas tekstas: " << decryptAlphabet(encrypted, key) << endl;
     } else if (choice == 2) {
         string encrypted = encryptASCII(text, key);
-        cout << "Užšifruotas tekstas (ASCII): " << encrypted << endl;
-        cout << "Atšifruotas tekstas: " << decryptASCII(encrypted, key) << endl;
+        cout << "Uzsifruotas tekstas (ASCII): " << encrypted << endl;
+        cout << "Atsifruotas tekstas: " << decryptASCII(encrypted, key) << endl;
     } else {
         cout << "Neteisingas pasirinkimas!" << endl;
     }
