@@ -84,11 +84,11 @@ void menu() {
     while (true) {
         cout << "Pasirinkite šifravimo būdą:\n1. Abėcėlės šifravimas\n2. ASCII šifravimas\n0. Baigti\nJūsų pasirinkimas: ";
         cin >> choice;
-        cin.ignore();
+        cin.ignore();  // Ignoruojame likusius simbolius po pasirinkimo
 
         if (choice == 0) {
             cout << "Programos pabaiga.\n";
-            break;
+            break; // Baigia ciklą ir programą
         }
 
         cout << "Įveskite tekstą: ";
@@ -98,4 +98,43 @@ void menu() {
 
         cout << "Pasirinkite veiksmą:\n1. Užšifruoti\n2. Atšifruoti\nJūsų pasirinkimas: ";
         cin >> action;
-        cin.ignore();
+        cin.ignore();  // Ignoruojame likusius simbolius po pasirinkimo
+
+        try {
+            if (choice == 1) { // Abėcėlės šifravimas
+                if (action == 1) {
+                    string encrypted = encryptAlphabet(text, key);
+                    cout << "Užšifruotas tekstas (abėcėlė): " << encrypted << endl;
+                } else if (action == 2) {
+                    string decrypted = decryptAlphabet(text, key);
+                    cout << "Atšifruotas tekstas: " << decrypted << endl;
+                } else {
+                    cout << "Neteisingas pasirinkimas!\n";
+                }
+            } else if (choice == 2) { // ASCII šifravimas
+                if (action == 1) {
+                    string encrypted = encryptASCII(text, key);
+                    cout << "Užšifruotas tekstas (ASCII): ";
+                    for (unsigned char c : encrypted) {
+                        cout << (int)c << " ";
+                    }
+                    cout << endl;
+                } else if (action == 2) {
+                    string decrypted = decryptASCII(text, key);
+                    cout << "Atšifruotas tekstas: " << decrypted << endl;
+                } else {
+                    cout << "Neteisingas pasirinkimas!\n";
+                }
+            } else {
+                cout << "Neteisingas pasirinkimas!\n";
+            }
+        } catch (const exception& e) {
+            cout << "Klaida: " << e.what() << endl;
+        }
+    }
+}
+
+int main() {
+    menu();
+    return 0;
+}
