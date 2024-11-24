@@ -17,13 +17,12 @@ int main() {
     std::string word;
     std::map<std::string, int> wordCount;
 
-    // Nuskaityti tekstą ir suskaičiuoti žodžius
+
     while (inputFile >> word) {
-        // Pašalinti skyrybos ženklus ir paversti žodį į mažąsias raides
         std::string cleanedWord = "";
         for (char &ch : word) {
-            if (std::isalnum(ch)) {  // Patikrinti, ar simbolis yra raidė arba skaitmuo
-                cleanedWord += std::tolower(ch);  // Paversti į mažąsias raides
+            if (std::isalnum(ch)) {
+                cleanedWord += std::tolower(ch);
             }
         }
 
@@ -32,7 +31,6 @@ int main() {
         }
     }
 
-    // Suskaičiuoti ir įrašyti rezultatus į output.txt
     for (const auto &entry : wordCount) {
         outputFile << entry.first << " pasikartoja " << entry.second << " kartus." << std::endl;
     }

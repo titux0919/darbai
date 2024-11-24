@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Titas/CLionProjects/untitled2
+# Install script for directory: C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/Darbas su failais/Darbas su failais. Lapkričio 8-15 d. (2)
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -52,6 +52,6 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-  file(WRITE "C:/Users/Titas/CLionProjects/untitled2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+  file(WRITE "C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/Darbas su failais/Darbas su failais. Lapkričio 8-15 d. (2)/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
 endif()
