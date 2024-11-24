@@ -1,0 +1,6 @@
+obuolys pasikartoja 3 kartus.
+patinka pasikartoja 1 kartus.
+skanus pasikartoja 1 kartus.
+sveikas pasikartoja 1 kartus.
+visiems pasikartoja 1 kartus.
+yra pasikartoja 2 kartus.
