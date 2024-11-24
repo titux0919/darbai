@@ -1,3 +1,0 @@
-C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/trečioji praktinė užduotis (pataisytas)/cmake-build-debug/CMakeFiles/Treioji_praktin_uduotis.dir
-C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/trečioji praktinė užduotis (pataisytas)/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/trečioji praktinė užduotis (pataisytas)/cmake-build-debug/CMakeFiles/rebuild_cache.dir

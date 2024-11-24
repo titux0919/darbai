@@ -1,3 +1,3 @@
-"C:\Program Files\JetBrains\CLion 2024.2.0.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\antroji_praktine_uzduotis.dir/objects.a
-C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\ar.exe qc CMakeFiles\antroji_praktine_uzduotis.dir/objects.a @CMakeFiles\antroji_praktine_uzduotis.dir\objects1.rsp
-C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\antroji_praktine_uzduotis.dir/objects.a -Wl,--no-whole-archive -o antroji_praktine_uzduotis.exe -Wl,--out-implib,libantroji_praktine_uzduotis.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\antroji_praktine_uzduotis.dir\linkLibs.rsp
+"C:\Program Files\JetBrains\CLion 2024.3\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\antroji_praktine_uzduotis.dir/objects.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\ar.exe qc CMakeFiles\antroji_praktine_uzduotis.dir/objects.a @CMakeFiles\antroji_praktine_uzduotis.dir\objects1.rsp
+C:\PROGRA~1\JETBRA~1\CLION2~1.3\bin\mingw\bin\G__~1.EXE -g -Wl,--whole-archive CMakeFiles\antroji_praktine_uzduotis.dir/objects.a -Wl,--no-whole-archive -o antroji_praktine_uzduotis.exe -Wl,--out-implib,libantroji_praktine_uzduotis.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\antroji_praktine_uzduotis.dir\linkLibs.rsp

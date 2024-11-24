@@ -1,0 +1,60 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.29"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "pirmoji_praktin_uduotis",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "pirmoji_praktin_uduotis::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pirmoji_praktin_uduotis-Debug-eb0ef1cd78c4ce5a77e0.json",
+					"name" : "pirmoji_praktin_uduotis",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/pirmoji praktin\u0117 u\u017eduotis/cmake-build-debug",
+		"source" : "C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/pirmoji praktin\u0117 u\u017eduotis"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
