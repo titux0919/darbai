@@ -68,33 +68,33 @@ int main() {
 
     do {
         cout << "\nPasirinkite:\n";
-        cout << "1. Šifruoti/Dešifruoti naudojant abėcėlę\n";
-        cout << "2. Šifruoti/Dešifruoti naudojant ASCII koduotę\n";
-        cout << "3. Išeiti\n";
-        cout << "Jūsų pasirinkimas: ";
+        cout << "1. Sifruoti/Desifruoti naudojant abecele\n";
+        cout << "2. Sifruoti/Desifruoti naudojant ASCII koduote\n";
+        cout << "3. Iseiti\n";
+        cout << "Jusu pasirinkimas: ";
         cin >> choice;
         cin.ignore();
 
         if (choice == 1 || choice == 2) {
-            cout << "Įveskite tekstą: ";
+            cout << "Iveskite teksta: ";
             getline(cin, text);
-            cout << "Įveskite slaptą raktą: ";
+            cout << "Iveskite slapta rakta: ";
             getline(cin, key);
 
             if (choice == 1) {
                 string encryptedText = encryptWithAlphabet(text, key);
-                cout << "Užšifruotas tekstas: " << encryptedText << endl;
-                cout << "Dešifruotas tekstas: " << decryptWithAlphabet(encryptedText, key) << endl;
+                cout << "Uzsifruotas tekstas: " << encryptedText << endl;
+                cout << "Desifruotas tekstas: " << decryptWithAlphabet(encryptedText, key) << endl;
             } else {
                 string encryptedText = encryptWithASCII(text, key);
-                cout << "Užšifruotas tekstas: " << encryptedText << endl;
-                cout << "Dešifruotas tekstas: " << decryptWithASCII(encryptedText, key) << endl;
+                cout << "Uzsifruotas tekstas: " << encryptedText << endl;
+                cout << "Desifruotas tekstas: " << decryptWithASCII(encryptedText, key) << endl;
             }
         } else if (choice == 3) {
             cout << "Programa baigta.\n";
-            break; 
+            break;
         } else {
-            cout << "Neteisingas pasirinkimas. Bandykite dar kartą.\n";
+            cout << "Neteisingas pasirinkimas. Bandykite dar karta.\n";
         }
     } while (choice != 3);
 
