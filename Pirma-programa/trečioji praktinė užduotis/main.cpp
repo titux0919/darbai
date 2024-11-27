@@ -1,102 +1,178 @@
 #include <iostream>
 #include <string>
-#include <vector>
-
+#include <cctype>
 using namespace std;
 
-string encryptWithAlphabet(const string& text, const string& key) {
-    string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    string result;
-    int keyIndex = 0;
-    for (char c : text) {
-        if (isalpha(c)) {
-            bool isLower = islower(c);
-            char base = isLower ? 'a' : 'A';
-            int textIndex = c - base;
-            int keyChar = tolower(key[keyIndex % key.size()]) - 'a';
-            result += alphabet[(textIndex + keyChar) % 26];
-            keyIndex++;
-        } else {
-            result += c;
+const char abecele[] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M',
+                        'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+const int abeceleIlgis = 26;
+
+int simboliopozicija(char simbolis) {
+    for (int i = 0; i < abeceleIlgis; i++) {
+        if (abecele[i] == simbolis) {
+            return i;
         }
     }
-    return result;
 }
 
-string decryptWithAlphabet(const string& text, const string& key) {
-    string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    string result;
-    int keyIndex = 0;
-    for (char c : text) {
-        if (isalpha(c)) {
-            bool isLower = islower(c);
-            char base = isLower ? 'a' : 'A';
-            int textIndex = c - base;
-            int keyChar = tolower(key[keyIndex % key.size()]) - 'a';
-            result += alphabet[(textIndex - keyChar + 26) % 26];
-            keyIndex++;
-        } else {
-            result += c;
-        }
+
+//ABECELE
+char sifruotisimboli(char simbolis, char raktas) {
+    return abecele[(simboliopozicija(simbolis) + simboliopozicija(raktas)) % abeceleIlgis];
+}
+char desifruotisimboli(char simbolis, char raktas) {
+    return abecele[(simboliopozicija(simbolis) - simboliopozicija(raktas) + abeceleIlgis) % abeceleIlgis];
+}
+string sifruotitexsta(string tekstas, string raktas) {
+    int tekstoilgis = tekstas.length();
+    string rezultatas(tekstoilgis, ' ');
+    for (int i = 0; i < tekstoilgis; i++) {
+        rezultatas[i] = sifruotisimboli(tekstas[i], raktas[i % raktas.length()]);
     }
-    return result;
+    return rezultatas;
+}
+string desifruotitexsta(string tekstas, string raktas) {
+    int tekstoilgis = tekstas.length();
+    string rezultatas(tekstoilgis, ' ');
+    for (int i = 0; i < tekstoilgis; i++) {
+        rezultatas[i] = desifruotisimboli(tekstas[i], raktas[i % raktas.length()]);
+    }
+    return rezultatas;
 }
 
-string encryptWithASCII(const string& text, const string& key) {
-    string result;
-    int keyIndex = 0;
-    for (char c : text) {
-        result += char((c + key[keyIndex % key.size()]) % 256);
-        keyIndex++;
+//ASCII
+char Simbol_to_ASCII(char simbolis) {
+    int number;
+    number = int(simbolis);
+    return number;
+}
+char ASCII_to_Simbol(int number) {
+    char simbol = (char)number;
+    return simbol;
+}
+string Sifruoti_to_ASCII(string tekstas, string raktas) {
+    int tekstoilgis = tekstas.length();
+    string rezultatas(tekstoilgis, ' ');
+    for (int i = 0; i < tekstoilgis; i++) {
+        int simbolisASCII = Simbol_to_ASCII(tekstas[i]);
+        int raktasASCII = Simbol_to_ASCII(raktas[i % raktas.length()]);
+        rezultatas[i] = ASCII_to_Simbol((simbolisASCII - 32 + raktasASCII) % 95 + 32);
     }
-    return result;
+    return rezultatas;
 }
 
-string decryptWithASCII(const string& text, const string& key) {
-    string result;
-    int keyIndex = 0;
-    for (char c : text) {
-        result += char((c - key[keyIndex % key.size()] + 256) % 256);
-        keyIndex++;
+string Desifruoti_is_ASCII(string tekstas, string raktas) {
+    int tekstoilgis = tekstas.length();
+    string rezultatas(tekstoilgis, ' ');
+    for (int i = 0; i < tekstoilgis; i++) {
+        int simbolisASCII = Simbol_to_ASCII(tekstas[i]);
+        int raktasASCII = Simbol_to_ASCII(raktas[i % raktas.length()]);
+
+        rezultatas[i] = ASCII_to_Simbol((simbolisASCII - 32 - raktasASCII + 95) % 95 + 32);
     }
-    return result;
+    return rezultatas;
 }
+
+char testi;
 
 int main() {
-    int choice;
-    string text, key;
+    while (true)
+    {
 
-    do {
-        cout << "\nPasirinkite:\n";
-        cout << "1. Sifruoti/Desifruoti naudojant abecele\n";
-        cout << "2. Sifruoti/Desifruoti naudojant ASCII koduote\n";
-        cout << "3. Iseiti\n";
-        cout << "Jusu pasirinkimas: ";
-        cin >> choice;
-        cin.ignore();
 
-        if (choice == 1 || choice == 2) {
-            cout << "Iveskite teksta: ";
-            getline(cin, text);
-            cout << "Iveskite slapta rakta: ";
-            getline(cin, key);
-
-            if (choice == 1) {
-                string encryptedText = encryptWithAlphabet(text, key);
-                cout << "Uzsifruotas tekstas: " << encryptedText << endl;
-                cout << "Desifruotas tekstas: " << decryptWithAlphabet(encryptedText, key) << endl;
-            } else {
-                string encryptedText = encryptWithASCII(text, key);
-                cout << "Uzsifruotas tekstas: " << encryptedText << endl;
-                cout << "Desifruotas tekstas: " << decryptWithASCII(encryptedText, key) << endl;
-            }
-        } else if (choice == 3) {
-            cout << "Programa baigta.\n";
-            break;
-        } else {
-            cout << "Neteisingas pasirinkimas. Bandykite dar karta.\n";
+        cout << "\nPasirinkite finkcija" << endl;
+        cout << "1. Vigenere algoritmas" << endl;
+        cout << "2. ASCII" << endl;
+        cout << "3. Iseiti" << endl;
+        int pasirinkimas;
+        cin >> pasirinkimas;
+        if (pasirinkimas==3)
+        {
+            cout << "Viso gero" << endl;
+            return 0;
         }
-    } while (choice != 3);
+        if (pasirinkimas == 1)
+        {
+            int metodas;
+            cout << "Sifravimas ar desifravimas?" << endl;
+            cout << "1. Sifraviamas" << endl;
+            cout << "2. Desifravimas" << endl;
+            cin >> metodas;
+            if (metodas == 1)
+            {
+                string tekstas;
+                string raktas;
 
-    return 0;
+                cout << "Ivesakite teksta: ";
+                cin >> tekstas;
+                cout << "Iveskite rakta: ";
+                cin >> raktas;
+
+                for (int i = 0; i < raktas.length(); i++)
+                {
+                    raktas[i] = toupper(raktas[i]);
+
+                }
+                for (int i = 0; i < tekstas.length(); i++)
+                {
+                    tekstas[i] = toupper(tekstas[i]);
+                }
+
+                string rezultatas = sifruotitexsta(tekstas, raktas);
+                cout << "Sifruotas tekstas: " << rezultatas << endl;
+            }
+            if (metodas == 2)
+            {
+                string tekstas;
+                string raktas;
+
+                cout << "Ivesakite teksta: ";
+                cin >> tekstas;
+                cout << "Iveskite rakta: ";
+                cin >> raktas;
+
+                for (int i = 0; i < raktas.length(); i++)
+                {
+                    raktas[i] = toupper(raktas[i]);
+
+                }
+                for (int i = 0; i < tekstas.length(); i++)
+                {
+                    tekstas[i] = toupper(tekstas[i]);
+                }
+
+                string rezultatas = desifruotitexsta(tekstas, raktas);
+                cout << "Disifruotas tekstas: " << rezultatas << endl;
+            }
+        }
+        if (pasirinkimas == 2)
+        {
+            int metodas;
+            cout << "Sifravimas ar desifravimas?" << endl;
+            cout << "1. Sifraviamas" << endl;
+            cout << "2. Desifravimas" << endl;
+            cin >> metodas;
+            if (metodas == 1)
+            {
+                string tekstas;
+                string raktas;
+                cout << "Iveskite teksta: ";
+                cin >> tekstas;
+                cout << "Iveskite rakta: ";
+                cin >> raktas;
+                cout << Sifruoti_to_ASCII(tekstas, raktas) << endl;
+            }
+            if (metodas == 2)
+            {
+                string tekstas;
+                string raktas;
+                cout << "Iveskite teksta: ";
+                cin >> tekstas;
+                cout << "Iveskite rakta: ";
+                cin >> raktas;
+                cout << Desifruoti_is_ASCII(tekstas, raktas) << endl;
+            }
+        }
+    }
+
 }
