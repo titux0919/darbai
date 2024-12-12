@@ -72,3 +72,90 @@ void showOrder() {
     }
     cout << "------------------------------------------------" << endl;
 }
+
+void getDataToOrderMenu() {
+    int choice = 1;
+    int i = 0;
+    while (choice != 0) {
+        showMenu();
+        cout << "Iveskite patiekalo pozicija ( '0' kad iseiti ): ";
+        cin >> choice;
+        if (choice == 0) break;
+
+        cout << "\nIveskite kiek noresit: ";
+        int amount;
+        cin >> amount;
+
+        menuOrder[i].menuItem = menuList[choice - 1].menuItem;
+        menuOrder[i].menuPrice = menuList[choice - 1].menuPrice;
+        menuOrder[i].amount = amount;
+
+        clearConsole();
+        cout << "Sekmingai prideta\n";
+        showOrder();
+
+        i++;
+        clearConsole();
+    }
+}
+
+void howMuch() {
+    cout << "Jusu uzsakimas:\n";
+    showOrder();
+    cout << "------------------------------------------------" << endl;
+    double mainPrice = 0;
+    for (int i = 0; i < masyvo_dydis; i++) {
+        mainPrice += menuOrder[i].menuPrice * menuOrder[i].amount;
+    }
+    cout << fixed << setprecision(2);
+    cout << "Kaina be mokesciu - " << mainPrice << " EUR" << endl;
+    cout << "Mokesciai - " << mainPrice * 0.21 << " EUR" << endl;
+    cout << "Galutine kaina - " << mainPrice + mainPrice * 0.21 << " EUR" << endl;
+    cout << "------------------------------------------------" << endl;
+
+    ofstream Failas("Ataskaita.txt");
+    Failas << "=============== RESTORANAS ===========" << endl;
+    Failas << left << setw(3) << "#" << " | "
+        << setw(35) << "Patiekalo pavadinimas" << " | "
+        << setw(10) << "Kaina (EUR)" << " | "
+        << "Kiekis" << endl;
+    Failas << "------------------------------------------------" << endl;
+    for (int i = 0; i < masyvo_dydis; i++) {
+        if (menuOrder[i].amount > 0) {
+            Failas << left << setw(3) << i + 1 << " | "
+                << setw(35) << menuOrder[i].menuItem << " | "
+                << setw(10) << fixed << setprecision(2) << menuOrder[i].menuPrice << " | "
+                << setw(6) << menuOrder[i].amount << endl;
+        }
+    }
+    Failas << "------------------------------------------------" << endl;
+    Failas << "Kaina be mokesciu - " << mainPrice << " EUR" << endl;
+    Failas << "Mokesciai - " << mainPrice * 0.21 << " EUR" << endl;
+    Failas << "Galutine kaina - " << mainPrice + mainPrice * 0.21 << " EUR" << endl;
+    Failas << "------------------------------------------------" << endl;
+    Failas.close();
+
+    cout << "Failas 'Ataskaita.txt' paruostas" << endl;
+}
+
+int main() {
+    cout << "======= RESTORANAS ===" << endl;
+    while (true) {
+        mainMenu();
+        int operacija;
+        cin >> operacija;
+
+        if (operacija == 1) {
+            showMenu();
+        }
+        else if (operacija == 2) {
+            getDataToOrderMenu();
+            showOrder();
+        }
+        else if (operacija == 3) {
+            clearConsole();
+            howMuch();
+            return 0;
+        }
+    }
+}
