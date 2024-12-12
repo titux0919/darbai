@@ -15,7 +15,7 @@ menuItemType menuList[8] = {
     {"Keksiukas su vysnia", 0.99},
     {"Prancuziskas skrebutis", 1.99},
     {"Vaisiu salotos", 2.49},
-    {"Pusryčiu dribsniai", 0.69},
+    {"Pusryciu dribsniai", 0.69},
     {"Kava", 0.50},
     {"Arbata", 0.75},
 };
@@ -34,8 +34,8 @@ void clearConsole() {
 }
 
 void mainMenu() {
-    cout << "1. Show menu" << endl;
-    cout << "2. Uzsakuti patiekalus" << endl;
+    cout << "1. Rodyti meniu" << endl;
+    cout << "2. Uzsakyti patiekalus" << endl;
     cout << "3. Gauti saskaita" << endl;
 }
 
@@ -78,11 +78,11 @@ void getDataToOrderMenu() {
     int i = 0;
     while (choice != 0) {
         showMenu();
-        cout << "Iveskite patiekalo pozicija ( '0' kad iseiti ): ";
+        cout << "Iveskite patiekalo numeri ( '0' kad iseiti ): ";
         cin >> choice;
         if (choice == 0) break;
 
-        cout << "\nIveskite kiek noresit: ";
+        cout << "\nIveskite kiek vienetu noresite: ";
         int amount;
         cin >> amount;
 
@@ -113,7 +113,7 @@ void howMuch() {
     cout << "Galutine kaina - " << mainPrice + mainPrice * 0.21 << " EUR" << endl;
     cout << "------------------------------------------------" << endl;
 
-    ofstream Failas("Ataskaita.txt");
+    ofstream Failas("Saskaita.txt");
     Failas << "=============== RESTORANAS ===========" << endl;
     Failas << left << setw(3) << "#" << " | "
         << setw(35) << "Patiekalo pavadinimas" << " | "
@@ -135,7 +135,7 @@ void howMuch() {
     Failas << "------------------------------------------------" << endl;
     Failas.close();
 
-    cout << "Failas 'Ataskaita.txt' paruostas" << endl;
+    cout << "Failas 'Saskaita.txt' paruostas" << endl;
 }
 
 int main() {
