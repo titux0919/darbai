@@ -112,4 +112,78 @@ void viewContacts(Contact* contacts, int size) {
     }
 }
 
+void updateContact(Contact* contacts, int size) {
+    int id;
+    cout << "Iveskite kontakta ID redagavimui: ";
+    cin >> id;
+    cin.ignore();
 
+    for (int i = 0; i < size; i++) {
+        if (contacts[i].id == id) {
+            cout << "Redaguojamas kontaktas: \n";
+            cout << "Dabartinis vardas: " << contacts[i].firstName << "\n";
+            cout << "Iveskite naujS vardS (arba palikite tuscia): ";
+            string input;
+            getline(cin, input);
+            if (!input.empty()) contacts[i].firstName = input;
+
+            cout << "Dabartine pavarde: " << contacts[i].lastName << "\n";
+            cout << "Iveskite nauja pavarde (arba palikite tuscia): ";
+            getline(cin, input);
+            if (!input.empty()) contacts[i].lastName = input;
+
+            cout << "Dabartinis telefonas: " << contacts[i].phoneNumber << "\n";
+            cout << "Iveskite nauja telefona (arba palikite tuscia): ";
+            getline(cin, input);
+            if (!input.empty()) contacts[i].phoneNumber = input;
+
+            cout << "Dabartinis el. pastas: " << contacts[i].email << "\n";
+            cout << "Iveskite nauja el. pasta (arba palikite tuscia): ";
+            getline(cin, input);
+            if (!input.empty()) contacts[i].email = input;
+
+            cout << "Kontaktas atnaujintas sekmingai!\n";
+            return;
+        }
+    }
+
+    cout << "Kontaktas su ID " << id << " nerastas.\n";
+}
+
+void deleteContact(Contact*& contacts, int& size) {
+    if (size == 0) {
+        cout << "Kontaktu sarasas tuscias.\n";
+        return;
+    }
+
+    int id;
+    cout << "Iveskite kontakta ID pasalinimui: ";
+    cin >> id;
+
+    int indexToDelete = -1;
+    for (int i = 0; i < size; i++) {
+        if (contacts[i].id == id) {
+            indexToDelete = i;
+            break;
+        }
+    }
+
+    if (indexToDelete == -1) {
+        cout << "Kontaktas su ID " << id << " nerastas.\n";
+        return;
+    }
+
+    Contact* newContacts = new Contact[size - 1];
+
+    for (int i = 0, j = 0; i < size; i++) {
+        if (i != indexToDelete) {
+            newContacts[j++] = contacts[i];
+        }
+    }
+
+    delete[] contacts;
+    contacts = newContacts;
+    size--;
+
+    cout << "Kontaktas pasalintas sekmingai!\n";
+}

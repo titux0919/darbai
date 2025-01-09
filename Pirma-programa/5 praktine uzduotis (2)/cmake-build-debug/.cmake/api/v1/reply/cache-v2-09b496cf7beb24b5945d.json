@@ -11,7 +11,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Titas/CLionProjects/5 praktine uzduotis (2)/cmake-build-debug"
+			"value" : "C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/5 praktine uzduotis (2)/cmake-build-debug"
 		},
 		{
 			"name" : "5_praktine_uzduotis__2__IS_TOP_LEVEL",
@@ -35,7 +35,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Titas/CLionProjects/5 praktine uzduotis (2)"
+			"value" : "C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/5 praktine uzduotis (2)"
 		},
 		{
 			"name" : "CMAKE_ADDR2LINE",
@@ -91,7 +91,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Titas/CLionProjects/5 praktine uzduotis (2)/cmake-build-debug"
+			"value" : "c:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/5 praktine uzduotis (2)/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -611,7 +611,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Titas/CLionProjects/5 praktine uzduotis (2)/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/5 praktine uzduotis (2)/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -683,7 +683,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Titas/CLionProjects/5 praktine uzduotis (2)"
+			"value" : "C:/Users/Titas/Documents/GitHub/darbai/Pirma-programa/5 praktine uzduotis (2)"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
