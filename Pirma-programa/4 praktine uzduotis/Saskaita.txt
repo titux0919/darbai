@@ -1,11 +1,12 @@
 =============== RESTORANAS ===========
 #   | Patiekalo pavadinimas               | Kaina (EUR) | Kiekis
 ------------------------------------------------
-1   | Arbata                              | 0.75       | 1.00  
-2   | Kiausiniene                         | 1.45       | 1.00  
-3   | Pusryciu dribsniai                  | 0.69       | 2.00  
+1   | Kiausiniene                         | 1.45       | 2.00  
+2   | Keksiukas su vysnia                 | 0.99       | 3.00  
+3   | Arbata                              | 0.75       | 2.00  
+4   | Vaisiu salotos                      | 2.49       | 1.00  
 ------------------------------------------------
-Kaina be mokesciu - 3.58 EUR
-Mokesciai - 0.75 EUR
-Galutine kaina - 4.33 EUR
+Kaina be mokesciu - 9.86 EUR
+Mokesciai - 2.07 EUR
+Galutine kaina - 11.93 EUR
 ------------------------------------------------
