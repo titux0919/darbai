@@ -3,7 +3,7 @@
 
 using namespace std;
 
-struct Contact {
+struct Contact { //aprašo kiekvieną kontaktą
     int id;
     string firstName;
     string lastName;
@@ -11,7 +11,7 @@ struct Contact {
     string email;
 };
 
-void addContact(Contact*& contacts, int& size, int& nextId);
+void addContact(Contact*& contacts, int& size, int& nextId); // naudojamas kaip funkcijų grąžinimo tipas, nes funkcijos skirtos atlikti tam tikrus veiksmus
 void viewContacts(Contact* contacts, int size);
 void updateContact(Contact* contacts, int size);
 void deleteContact(Contact*& contacts, int& size);
@@ -19,10 +19,10 @@ void deleteContact(Contact*& contacts, int& size);
 int main() {
     system("chcp 1257 > null");
 
-    Contact* contacts = nullptr;
-    int size = 0;
+    Contact* contacts = nullptr; // nurodo masyvą, kuris saugos kontaktus. Dėl to,nes jis iš pradžių tuščias, nustatyta nullptr
+    int size = 0; // dabartinis kontaktų sk. masyve
     int nextId = 1; // Unikalus ID kiekvienam kontaktui
-    int choice;
+    int choice; // atvaizduoja vartotojui meniu su pasirinkimais
 
     do {
         cout << "\n===== Kontaktu valdymo sistema =====\n";
@@ -36,7 +36,7 @@ int main() {
 
         cin.ignore();
 
-        switch (choice) {
+        switch (choice) { // patikrina vartotojo pasirinkimą ir pagal jo reikšmę atlieką atitinkamus veiksmus
             case 1:
                 addContact(contacts, size, nextId);
                 break;
@@ -55,7 +55,7 @@ int main() {
             default:
                 cout << "Neteisingas pasirinkimas. Bandykite dar karta.\n";
         }
-    } while (choice != 0);
+    } while (choice != 0); //kartosis tol, kol pasirinkimas nėra 0
 
     // Atlaisvinimui atminties
     delete[] contacts;
@@ -63,10 +63,10 @@ int main() {
     return 0;
 }
 
-void addContact(Contact*& contacts, int& size, int& nextId) {
-    Contact* newContact = new Contact;
+void addContact(Contact*& contacts, int& size, int& nextId) { // atsakinga už naujo kontakto pridėjimą prie dinaminio kontaktų masyvo
+    Contact* newContact = new Contact; //sukuriamas naujas kontaktas dinaminiu būdu
     newContact->id = nextId++;
-
+// įvedama kontaktinė informacija
     cout << "Iveskite varda: ";
     getline(cin, newContact->firstName);
     cout << "Iveskite pavarde: ";
@@ -76,16 +76,16 @@ void addContact(Contact*& contacts, int& size, int& nextId) {
     cout << "Iveskite el. pasta: ";
     getline(cin, newContact->email);
 
-    Contact* newContacts = new Contact[size + 1];
+    Contact* newContacts = new Contact[size + 1]; // sukuriamas naujas dinaminis masyvas, kuris yra vienu elementu didesnis už esamą
 
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) { //perkopijuomi seni kontaktai
         newContacts[i] = contacts[i];
     }
 
 
     // Prideti nauja kontakta
     newContacts[size] = *newContact;
-
+    // senas kontaktų masyvas ištrinamas, naujas masyvas tampa pagrindiniu tuo metu
     delete[] contacts;
     delete newContact;
 
@@ -95,37 +95,37 @@ void addContact(Contact*& contacts, int& size, int& nextId) {
     cout << "Kontaktas pridetas sekmingai!\n";
 }
 
-void viewContacts(Contact* contacts, int size) {
+void viewContacts(Contact* contacts, int size) { // patikrina, ar sąrašas tuščias
     if (size == 0) {
         cout << "Kontaktu sarasas tuscias.\n";
         return;
     }
 
-    cout << "\n===== Kontaktu saraaas =====\n";
+    cout << "\n===== Kontaktu sarasas =====\n"; // spausdina kontaktų sąrašą
     for (int i = 0; i < size; i++) {
         cout << "ID: " << contacts[i].id << "\n";
         cout << "Vardas: " << contacts[i].firstName << "\n";
         cout << "Pavarde: " << contacts[i].lastName << "\n";
         cout << "Telefonas: " << contacts[i].phoneNumber << "\n";
         cout << "El. pastas: " << contacts[i].email << "\n";
-        cout << "-----------------------------\n";
+        cout << "-----------------------------\n"; // įterpiama linija, kad kie būtų atskirti
     }
 }
 
-void updateContact(Contact* contacts, int size) {
-    int id;
+void updateContact(Contact* contacts, int size) { // Contact* rodyklė į masyvą, kuriame saugomi kontaktai. Int size: Skaičius, nurodantis,kiek kontaktų yra masyve.
+    int id; //vartotojas įveda kontakto ID, kuri nori keisti
     cout << "Iveskite kontakta ID redagavimui: ";
     cin >> id;
-    cin.ignore();
+    cin.ignore(); // išvalomas likęs simbolių srautas, kad getline veiktų tinkamai
 
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) { // ciklas pereina per visus kontaktus, kad rastų kontaktą su nurodytu ID.
         if (contacts[i].id == id) {
             cout << "Redaguojamas kontaktas: \n";
             cout << "Dabartinis vardas: " << contacts[i].firstName << "\n";
-            cout << "Iveskite naujS vardS (arba palikite tuscia): ";
+            cout << "Iveskite nauja varda (arba palikite tuscia): ";
             string input;
             getline(cin, input);
-            if (!input.empty()) contacts[i].firstName = input;
+            if (!input.empty()) contacts[i].firstName = input; // tikrina ar vartotojas įvedė naują vardą, jei taip jį atnaujina
 
             cout << "Dabartine pavarde: " << contacts[i].lastName << "\n";
             cout << "Iveskite nauja pavarde (arba palikite tuscia): ";
@@ -150,7 +150,7 @@ void updateContact(Contact* contacts, int size) {
     cout << "Kontaktas su ID " << id << " nerastas.\n";
 }
 
-void deleteContact(Contact*& contacts, int& size) {
+void deleteContact(Contact*& contacts, int& size) { // skirta pašalinti kontaktą iš sąrašo pagal jo unikalų ID.
     if (size == 0) {
         cout << "Kontaktu sarasas tuscias.\n";
         return;
@@ -160,7 +160,7 @@ void deleteContact(Contact*& contacts, int& size) {
     cout << "Iveskite kontakta ID pasalinimui: ";
     cin >> id;
 
-    int indexToDelete = -1;
+    int indexToDelete = -1; // saugo paieškos rezultatus, jei taip jis įrašomas į indexToDelete ir jis yra nutraukiamas
     for (int i = 0; i < size; i++) {
         if (contacts[i].id == id) {
             indexToDelete = i;
@@ -168,22 +168,22 @@ void deleteContact(Contact*& contacts, int& size) {
         }
     }
 
-    if (indexToDelete == -1) {
+    if (indexToDelete == -1) { // jei nerandamas lieka su reikšme -1, išvedama klaidos žinutė ir funkcija baigiama
         cout << "Kontaktas su ID " << id << " nerastas.\n";
         return;
     }
 
-    Contact* newContacts = new Contact[size - 1];
+    Contact* newContacts = new Contact[size - 1]; // sukuriama nauja masyvo vieta, kurioje saugomi bus kontaktai, bet jau be pašalinto kontakto.
 
-    for (int i = 0, j = 0; i < size; i++) {
+    for (int i = 0, j = 0; i < size; i++) { // cikle visi kontaktai iš seno masyvo, perkeliami į naują, išskyrus tas kuris buvo pasirinktas pašalinti
         if (i != indexToDelete) {
             newContacts[j++] = contacts[i];
         }
     }
 
-    delete[] contacts;
-    contacts = newContacts;
-    size--;
+    delete[] contacts; // sename masyve esanti atmintis atlaisvinama, kad būtų išvengta atminties nuotėkio
+    contacts = newContacts; // nukreipiamas į naują masyvą, kuris neturi pašalinto kontakto
+    size--; //sumažinimas vienu, kad atspindėtų sumažėjusį kontaktų sk.
 
     cout << "Kontaktas pasalintas sekmingai!\n";
 }
