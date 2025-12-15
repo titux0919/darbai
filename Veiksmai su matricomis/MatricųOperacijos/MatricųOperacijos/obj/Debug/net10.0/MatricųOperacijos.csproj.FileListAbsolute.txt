@@ -1,0 +1,14 @@
+C:\Users\Titas\RiderProjects\MatricųOperacijos\MatricųOperacijos\bin\Debug\net10.0\MatricųOperacijos.exe
+C:\Users\Titas\RiderProjects\MatricųOperacijos\MatricųOperacijos\bin\Debug\net10.0\MatricųOperacijos.deps.json
+C:\Users\Titas\RiderProjects\MatricųOperacijos\MatricųOperacijos\bin\Debug\net10.0\MatricųOperacijos.runtimeconfig.json
+C:\Users\Titas\RiderProjects\MatricųOperacijos\MatricųOperacijos\bin\Debug\net10.0\MatricųOperacijos.dll
+C:\Users\Titas\RiderProjects\MatricųOperacijos\MatricųOperacijos\bin\Debug\net10.0\MatricųOperacijos.pdb
+C:\Users\Titas\RiderProjects\MatricųOperacijos\MatricųOperacijos\obj\Debug\net10.0\MatricųOperacijos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Titas\RiderProjects\MatricųOperacijos\MatricųOperacijos\obj\Debug\net10.0\MatricųOperacijos.AssemblyInfoInputs.cache
+C:\Users\Titas\RiderProjects\MatricųOperacijos\MatricųOperacijos\obj\Debug\net10.0\MatricųOperacijos.AssemblyInfo.cs
+C:\Users\Titas\RiderProjects\MatricųOperacijos\MatricųOperacijos\obj\Debug\net10.0\MatricųOperacijos.csproj.CoreCompileInputs.cache
+C:\Users\Titas\RiderProjects\MatricųOperacijos\MatricųOperacijos\obj\Debug\net10.0\MatricųOperacijos.dll
+C:\Users\Titas\RiderProjects\MatricųOperacijos\MatricųOperacijos\obj\Debug\net10.0\refint\MatricųOperacijos.dll
+C:\Users\Titas\RiderProjects\MatricųOperacijos\MatricųOperacijos\obj\Debug\net10.0\MatricųOperacijos.pdb
+C:\Users\Titas\RiderProjects\MatricųOperacijos\MatricųOperacijos\obj\Debug\net10.0\MatricųOperacijos.genruntimeconfig.cache
+C:\Users\Titas\RiderProjects\MatricųOperacijos\MatricųOperacijos\obj\Debug\net10.0\ref\MatricųOperacijos.dll
