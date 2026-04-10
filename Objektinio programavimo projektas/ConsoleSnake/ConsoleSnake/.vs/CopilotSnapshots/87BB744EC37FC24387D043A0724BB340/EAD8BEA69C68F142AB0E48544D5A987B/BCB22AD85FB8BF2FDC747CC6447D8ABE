@@ -1,0 +1,101 @@
+﻿using System;
+using System.IO;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace ConsoleSnake.Services
+{
+    public sealed class FileHighScoreStore : IHighScoreStore
+    {
+        private readonly string _path;
+
+        public FileHighScoreStore(string path) => _path = path;
+
+        public int Load()
+        {
+            try
+            {
+                if (!File.Exists(_path)) return 0;
+                var txt = File.ReadAllText(_path).Trim();
+
+                // if file contains multiple scores separated by commas, return first as hi-score
+                if (txt.Contains(','))
+                {
+                    var parts = txt.Split(',').Select(s => s.Trim()).Where(s => s.Length > 0).ToArray();
+                    if (parts.Length == 0) return 0;
+                    int parsed;
+                    return int.TryParse(parts[0], out parsed) ? parsed : 0;
+                }
+
+                int parsedSingle;
+                return int.TryParse(txt, out parsedSingle) ? parsedSingle : 0;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        public void Save(int hiScore)
+        {
+            try
+            {
+                // preserve history by prepending the new score to history
+                var history = LoadHistory().ToList();
+                history.Insert(0, hiScore);
+                // keep only last 5
+                if (history.Count > 5) history = history.Take(5).ToList();
+                File.WriteAllText(_path, string.Join(",", history));
+            }
+            catch
+            {
+                // ignore
+            }
+        }
+
+        public int[] LoadHistory()
+        {
+            try
+            {
+                if (!File.Exists(_path)) return Array.Empty<int>();
+                var txt = File.ReadAllText(_path).Trim();
+                if (string.IsNullOrWhiteSpace(txt)) return Array.Empty<int>();
+                var parts = txt.Split(',').Select(s => s.Trim()).Where(s => s.Length > 0);
+                var list = new List<int>();
+                foreach (var p in parts)
+                {
+                    if (int.TryParse(p, out var v)) list.Add(v);
+                }
+                return list.ToArray();
+            }
+            catch
+            {
+                return Array.Empty<int>();
+            }
+        }
+
+        public void SaveHistory(int[] scores)
+        {
+            try
+            {
+                File.WriteAllText(_path, string.Join(",", scores));
+            }
+            catch
+            {
+                // ignore
+            }
+        }
+
+        public void Clear()
+        {
+            try
+            {
+                if (File.Exists(_path)) File.Delete(_path);
+            }
+            catch
+            {
+                // ignore
+            }
+        }
+    }
+}

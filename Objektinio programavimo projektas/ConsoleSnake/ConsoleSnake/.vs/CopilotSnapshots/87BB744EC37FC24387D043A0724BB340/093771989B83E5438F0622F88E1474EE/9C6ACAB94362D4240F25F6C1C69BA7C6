@@ -1,0 +1,27 @@
+﻿using ConsoleSnake.Core;
+using ConsoleSnake.Input;
+using ConsoleSnake.Rendering;
+using ConsoleSnake.Services;
+
+namespace ConsoleSnake
+{
+    internal static class Program
+    {
+        // `Main` yra programos starto taškas. Jame surenkamos implementacijos ir sukonstruojamas
+        // `Game` objektas. Tai paprasta „composition root“ (be DI konteinerio) — aišku ir lengva paaiškinti.
+        static void Main()
+        {
+            // Konkrečios implementacijos: konsolinis renderer, klaviatūros įvestis ir failinė saugykla
+            IRenderer renderer = new ConsoleRenderer();
+            IInputSource input = new KeyboardInputSource();
+            IHighScoreStore store = new FileHighScoreStore("hiscore.txt");
+
+            // ProgressService naudoja IHighScoreStore saugojimui; jis valdys score/hi-score/bannerius
+            IProgressService progress = new ProgressService(store);
+
+            // Sukuriame ir paleidžiame žaidimą
+            var game = new Game(renderer, input, progress);
+            game.Run();
+        }
+    }
+}

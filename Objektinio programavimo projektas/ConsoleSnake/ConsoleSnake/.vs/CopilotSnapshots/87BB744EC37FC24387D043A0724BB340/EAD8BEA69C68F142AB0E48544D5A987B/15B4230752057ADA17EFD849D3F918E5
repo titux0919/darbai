@@ -1,0 +1,49 @@
+﻿using System.Collections.Generic;
+
+namespace ConsoleSnake.Domain
+{
+    public class Snake
+    {
+        private readonly LinkedList<Point> _body = new();
+        private Direction _direction = Direction.Right;
+
+        public IEnumerable<Point> Body => _body;
+
+        public Snake(Point start) => _body.AddFirst(start);
+
+        public void SetDirection(Direction newDir)
+        {
+            if (IsOpposite(_direction, newDir)) return;
+            _direction = newDir;
+        }
+
+        public Point GetNextHeadPosition()
+        {
+            var head = _body.First!.Value;
+            return head.Move(_direction.ToPoint());
+        }
+
+        public bool IsCollidingWithSelf(Point nextHead)
+        {
+            foreach (var p in _body)
+                if (p == nextHead) return true;
+
+            return false;
+        }
+
+        public void Move(bool grow)
+        {
+            var nextHead = GetNextHeadPosition();
+            _body.AddFirst(nextHead);
+
+            if (!grow)
+                _body.RemoveLast();
+        }
+
+        private static bool IsOpposite(Direction a, Direction b) =>
+            (a == Direction.Up && b == Direction.Down)
+            || (a == Direction.Down && b == Direction.Up)
+            || (a == Direction.Left && b == Direction.Right)
+            || (a == Direction.Right && b == Direction.Left);
+    }
+}

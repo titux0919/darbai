@@ -1,0 +1,274 @@
+﻿using ConsoleSnake.Domain;
+using ConsoleSnake.Input;
+using ConsoleSnake.Rendering;
+using ConsoleSnake.Services;
+
+namespace ConsoleSnake.Core
+{
+    // `Game` klasė valdo žaidimo ciklą: skaitymą iš įvesties, atnaujinimą ir renderinimą.
+    // Čia vyksta pagrindinė žaidimo logika (žaidimo būsena, gyvatės judėjimas, susidūrimai).
+    public class Game
+    {
+        private readonly IRenderer _renderer; // atvaizdavimo sluoksnis (konsolė)
+        private readonly IInputSource _input; // įvesties šaltinis (klaviatūra)
+
+        private GameSettings _settings; // žaidimo nustatymai pagal sunkumą
+
+        private bool _isRunning = true; // ar žaidimas dar veikia
+        private bool _isPaused = false; // pauzės būsena
+        private bool _gameOver = false; // ar žaidimas baigtas
+
+        private Snake _snake = null!; // gyvatė (domain objektas)
+        private Point _food; // maisto pozicija
+
+        private readonly IProgressService _progress; // progresas / taškai / hi-score
+        private bool _showHelp = false; // ar rodyti pagalbos ekraną
+
+        // Konstruktoriumi injektuojame abstrakcijas (renderer, input, progress) — taip lengviau testuoti
+        public Game(IRenderer renderer, IInputSource input, IProgressService progress)
+        {
+            _renderer = renderer;
+            _input = input;
+
+            _settings = GameSettings.ForDifficulty(Difficulty.Normal);
+
+            _progress = progress;
+
+            ResetGame(); // nustatom pradines reikšmes
+        }
+
+        // Pagrindinis žaidimo ciklas: input -> update -> render -> sleep
+        public void Run()
+        {
+            _renderer.Initialize(_settings.Width, _settings.Height);
+
+            while (_isRunning)
+            {
+                HandleInput();
+
+                if (!_isPaused && !_gameOver)
+                    Update();
+
+                Render();
+
+                Thread.Sleep(_progress.TickDelay); // laukiame tarp įrašų (greitis priklauso nuo progress)
+            }
+        }
+
+        // Apdoroja klaviatūros įvykius. Pagrindinės komandos yra EXIT, PAUSE, RESTART, DIFFICULTY, HELP, CLEAR HI-SCORES
+        private void HandleInput()
+        {
+            while (_input.TryRead(out var snapshot))
+            {
+                if (snapshot.Command is not null)
+                {
+                    switch (snapshot.Command.Value)
+                    {
+                        case GameCommand.Exit:
+                            _isRunning = false;
+                            return;
+
+                        case GameCommand.TogglePause:
+                            if (!_gameOver) _isPaused = !_isPaused;
+                            break;
+
+                        case GameCommand.Restart:
+                            ResetGame();
+                            break;
+
+                        case GameCommand.DifficultyEasy:
+                            ApplyDifficulty(Difficulty.Easy);
+                            break;
+
+                        case GameCommand.DifficultyNormal:
+                            ApplyDifficulty(Difficulty.Normal);
+                            break;
+
+                        case GameCommand.DifficultyHard:
+                            ApplyDifficulty(Difficulty.Hard);
+                            break;
+
+                        case GameCommand.ToggleHelp:
+                            _showHelp = !_showHelp; // rodyti/nerodyti pagalbą
+                            break;
+
+                        case GameCommand.ClearHiScores:
+                            _progress.ClearHighScores(); // išvalo hi-score istoriją
+                            break;
+                    }
+                }
+
+                // Krypties pakeitimas (tik kai žaidimas nevyksta pauzėje ar nesibaigęs)
+                if (snapshot.Direction is not null && !_isPaused && !_gameOver)
+                    _snake.SetDirection(snapshot.Direction.Value);
+            }
+        }
+
+        // Pakeičia sunkumo nustatymus — inicializuoja lango dydį ir resetina žaidimą
+        private void ApplyDifficulty(Difficulty d)
+        {
+            _settings = GameSettings.ForDifficulty(d);
+            _renderer.Initialize(_settings.Width, _settings.Height);
+            ResetGame();
+        }
+
+        // Žaidimo atnaujinimo logika: apskaičiuojamas kitas galvos taškas, tikrinami sienos ir savidūra,
+        // perkeliam gyvatę, jeigu suvalgo maistą – informuojam ProgressService
+        private void Update()
+        {
+            var nextHead = _snake.GetNextHeadPosition();
+
+            // sienos (rėmas)
+            if (nextHead.X <= 0 || nextHead.X >= _settings.Width - 1 ||
+                nextHead.Y <= 0 || nextHead.Y >= _settings.Height - 1)
+            {
+                _gameOver = true; // atsirado susidūrimas su rėmu
+                return;
+            }
+
+            // į save (susidūrimas su savo kūnu)
+            if (_snake.IsCollidingWithSelf(nextHead))
+            {
+                _gameOver = true;
+                return;
+            }
+
+            bool grow = nextHead == _food; // ar suvalgė maistą
+            _snake.Move(grow);
+
+            if (grow)
+            {
+                _progress.OnFoodEaten(_settings); // perkeliam taškų/greičio logiką į servisą
+                _food = SpawnFood(); // sugeneruojam naują maistą
+            }
+        }
+
+        // Renderinimo logika: nupiždiname rėmą, maistą, gyvatę, HUD, pagalbą ir GAME OVER tekstus
+        private void Render()
+        {
+            _renderer.Clear();
+
+            int w = _settings.Width;
+            int h = _settings.Height;
+
+            // rėmas (viršus/apačia)
+            for (int x = 0; x < w; x++)
+            {
+                _renderer.DrawCell(new Point(x, 0), '#');
+                _renderer.DrawCell(new Point(x, h - 1), '#');
+            }
+
+            // rėmas (kairė/dešinė)
+            for (int y = 0; y < h; y++)
+            {
+                _renderer.DrawCell(new Point(0, y), '#');
+                _renderer.DrawCell(new Point(w - 1, y), '#');
+            }
+
+            // maistas
+            _renderer.DrawCell(_food, 'X');
+
+            // gyvatė
+            bool first = true;
+            foreach (var p in _snake.Body)
+            {
+                _renderer.DrawCell(p, first ? '@' : 'o');
+                first = false;
+            }
+
+            // HUD (pagrindinė informacija viršuje arba apačioje)
+            string hud = $"Score:{_progress.Score} Hi:{_progress.HiScore} Diff:{_settings.Difficulty} Spd:{_progress.TickDelay}ms";
+            _renderer.DrawText(new Point(2, h - 1), hud);
+
+            // maži valdymo užrašai
+            _renderer.DrawText(new Point(2, 1), "P=Pause  R=Restart  ESC=Exit  1/2/3=Diff  H=Help  C=ClearHi");
+
+            if (_isPaused)
+            {
+                _renderer.DrawText(new Point(w / 2 - 5, h / 2), "== PAUSED ==");
+            }
+
+            // pagalbos informacija (jei įjungta H)
+            if (_showHelp)
+            {
+                var lines = new[]
+                {
+                    "Controls:",
+                    "Arrow/WASD - move",
+                    "P - pause",
+                    "R - restart",
+                    "1/2/3 - difficulty",
+                    "H - toggle help",
+                    "C - clear hi-scores",
+                    "ESC - exit"
+                };
+
+                for (int i = 0; i < lines.Length; i++)
+                    _renderer.DrawText(new Point(2, 3 + i), lines[i]);
+            }
+
+            // GAME OVER ekranas: rodom pranešimus ir top rezultatus
+            if (_gameOver)
+            {
+                _renderer.DrawText(new Point(w / 2 - 6, h / 2 - 1), "== GAME OVER ==");
+                _renderer.DrawText(new Point(w / 2 - 9, h / 2), "Press R to restart");
+                _renderer.DrawText(new Point(w / 2 - 8, h / 2 + 1), "Press ESC to exit");
+
+                // parodyti top rezultatus (jei tokie yra)
+                var top = _progress.GetTopScores();
+                for (int i = 0; i < top.Length; i++)
+                {
+                    var line = $"{i + 1}. {top[i]}";
+                    _renderer.DrawText(new Point(Math.Max(2, w / 2 - line.Length / 2), h / 2 + 3 + i), line);
+                }
+            }
+
+            // Milestone banner (kai pasiekiama tarpinė riba)
+            var milestone = _progress.GetMilestoneBannerText();
+            if (milestone is not null)
+            {
+                _renderer.DrawText(new Point(Math.Max(2, w / 2 - milestone.Length / 2), 3), milestone);
+            }
+
+            // NEW RECORD banner (mirksi pagal ProgressService logiką)
+            if (_progress.ShouldShowNewRecordBlink())
+            {
+                const string msg = "NEW RECORD!";
+                _renderer.DrawText(new Point(Math.Max(2, w / 2 - msg.Length / 2), 4), msg);
+            }
+
+            _renderer.Present();
+        }
+
+        // Paruošia pradinę žaidimo būseną
+        private void ResetGame()
+        {
+            _isPaused = false;
+            _gameOver = false;
+
+            _progress.Reset(_settings);
+
+            _snake = new Snake(new Point(_settings.Width / 2, _settings.Height / 2));
+            _food = SpawnFood();
+        }
+
+        // Sugeneruoja naują maisto tašką, neleidžiant pataikyti į gyvatę
+        private Point SpawnFood()
+        {
+            var rnd = Random.Shared;
+
+            while (true)
+            {
+                var p = new Point(rnd.Next(1, _settings.Width - 2), rnd.Next(1, _settings.Height - 2));
+
+                bool onSnake = false;
+                foreach (var s in _snake.Body)
+                {
+                    if (s == p) { onSnake = true; break; }
+                }
+
+                if (!onSnake) return p;
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+﻿using ConsoleSnake.Domain;
+
+namespace ConsoleSnake.Services
+{
+    // IProgressService apibrėžia API progresui / taškams / hi-score logikai.
+    // Game naudoja šią sąsają, todėl konkreti implementacija (ProgressService) gali būti keičiama
+    // be Game modifikacijos (DIP, OCP).
+    public interface IProgressService
+    {
+        // Dabartinis score ir hi-score
+        int Score { get; }
+        int HiScore { get; }
+
+        // Greitis (ms per tick), kuriuo Game naudoja Thread.Sleep
+        int TickDelay { get; }
+
+        // Inicializacija / reset pagal GameSettings
+        void Reset(GameSettings settings);
+
+        // Kviesti kai suvalgytas maistas — atnaujina score/hi/greitį/bannerius
+        void OnFoodEaten(GameSettings settings);
+
+        // Banneriai ir NEW RECORD rodymui
+        string? GetMilestoneBannerText();
+        bool ShouldShowNewRecordBlink();
+
+        // Pagalbiniai metodai hi-score valdymui / meniu
+        void ClearHighScores();
+        int[] GetTopScores();
+    }
+}

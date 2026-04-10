@@ -1,0 +1,8 @@
+﻿namespace ConsoleSnake.Input
+{
+    public interface IInputSource
+    {
+        // Bando nuskaityti vieną įvesties įvykį (komandą arba kryptį).
+        bool TryRead(out InputSnapshot snapshot);
+    }
+}

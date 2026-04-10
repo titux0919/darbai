@@ -1,0 +1,35 @@
+﻿namespace ConsoleSnake.Services
+{
+    public sealed class FileHighScoreStore : IHighScoreStore
+    {
+        private readonly string _path;
+
+        public FileHighScoreStore(string path) => _path = path;
+
+        public int Load()
+        {
+            try
+            {
+                if (!File.Exists(_path)) return 0;
+                var txt = File.ReadAllText(_path).Trim();
+                return int.TryParse(txt, out var v) ? v : 0;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        public void Save(int hiScore)
+        {
+            try
+            {
+                File.WriteAllText(_path, hiScore.ToString());
+            }
+            catch
+            {
+                // ignore
+            }
+        }
+    }
+}

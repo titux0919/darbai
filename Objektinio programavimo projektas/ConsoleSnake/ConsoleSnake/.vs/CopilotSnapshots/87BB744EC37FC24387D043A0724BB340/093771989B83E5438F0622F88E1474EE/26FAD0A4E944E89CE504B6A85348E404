@@ -1,0 +1,39 @@
+﻿using ConsoleSnake.Core;
+using ConsoleSnake.Input;
+using ConsoleSnake.Rendering;
+using ConsoleSnake.Services;
+using ConsoleSnake.UI;
+
+namespace ConsoleSnake
+{
+    internal static class Program
+    {
+        // `Main` now shows a small text menu to choose difficulty or view hi-scores.
+        static void Main()
+        {
+            IRenderer renderer = new ConsoleRenderer();
+            IInputSource input = new KeyboardInputSource();
+            IHighScoreStore store = new FileHighScoreStore("hiscore.txt");
+
+            var menu = new StartMenu(store);
+            var choice = menu.Show();
+            if (choice is null)
+                return; // user exited from menu
+
+            var settings = GameSettings.ForDifficulty(choice.Value);
+
+            IProgressService progress = new ProgressService(store);
+
+            // Pass chosen difficulty settings into Game by resetting progress and initializing renderer in Game.Run
+            var game = new Game(renderer, input, progress);
+
+            // Apply chosen difficulty by calling ApplyDifficulty-like behavior through Game's API: we reinitialize renderer and reset settings
+            // Simpler: directly set GameSettings by calling internal behavior: since Game chooses default, we simulate by calling ApplyDifficulty via restarting renderer
+
+            // Instead of modifying Game constructor, we'll reinitialize renderer to match chosen size and then ResetGame indirectly by restarting.
+            renderer.Initialize(settings.Width, settings.Height);
+
+            game.Run();
+        }
+    }
+}

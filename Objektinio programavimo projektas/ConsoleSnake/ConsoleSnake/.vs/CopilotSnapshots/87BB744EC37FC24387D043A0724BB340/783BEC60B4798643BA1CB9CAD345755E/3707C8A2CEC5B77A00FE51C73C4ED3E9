@@ -1,0 +1,88 @@
+﻿using ConsoleSnake.Domain;
+
+namespace ConsoleSnake.Services
+{
+    /// <summary>
+    /// Atsakingas už Score, HiScore, greitėjimą, milestone ir NEW RECORD pranešimus.
+    /// SRP: vien tik progresas/taškai/rekordai/banneriai.
+    /// </summary>
+    public sealed class ProgressService : IProgressService
+    {
+        private readonly IHighScoreStore _store;
+
+        public int Score { get; private set; }
+        public int HiScore { get; private set; }
+
+        // Greitis (ms per tick)
+        public int TickDelay { get; private set; }
+
+        // Milestone banner
+        private int _nextMilestone;
+        private string? _milestoneText;
+        private DateTime _milestoneUntilUtc;
+
+        // New record banner
+        private DateTime _newRecordUntilUtc;
+
+        public ProgressService(IHighScoreStore store)
+        {
+            _store = store;
+            HiScore = _store.Load();
+        }
+
+        public void Reset(GameSettings settings)
+        {
+            Score = 0;
+            TickDelay = settings.StartDelayMs;
+
+            _nextMilestone = settings.MilestoneStep;
+            _milestoneText = null;
+            _milestoneUntilUtc = DateTime.MinValue;
+            _newRecordUntilUtc = DateTime.MinValue;
+        }
+
+        /// <summary>
+        /// Kviesti tik tada, kai suvalgytas maistas.
+        /// </summary>
+        public void OnFoodEaten(GameSettings settings)
+        {
+            // Score
+            Score += settings.PointsPerFood;
+
+            // Greitėjimas
+            if (TickDelay > settings.MinDelayMs)
+            {
+                TickDelay -= settings.SpeedStepMs;
+                if (TickDelay < settings.MinDelayMs)
+                    TickDelay = settings.MinDelayMs;
+            }
+
+            // Milestone kas settings.MilestoneStep (pvz 500)
+            if (Score >= _nextMilestone)
+            {
+                _milestoneText = $"MILESTONE! {_nextMilestone} pts!";
+                _milestoneUntilUtc = DateTime.UtcNow.AddSeconds(2.5);
+                _nextMilestone += settings.MilestoneStep;
+            }
+
+            // Hi-score + NEW RECORD
+            if (Score > HiScore)
+            {
+                HiScore = Score;
+                _store.Save(HiScore);
+                _newRecordUntilUtc = DateTime.UtcNow.AddSeconds(2.0);
+            }
+        }
+
+        public string? GetMilestoneBannerText()
+            => (_milestoneText is not null && DateTime.UtcNow <= _milestoneUntilUtc)
+                ? _milestoneText
+                : null;
+
+        public bool ShouldShowNewRecordBlink()
+        {
+            if (DateTime.UtcNow > _newRecordUntilUtc) return false;
+            return ((Environment.TickCount / 200) % 2) == 0; // mirksi kas ~200ms
+        }
+    }
+}

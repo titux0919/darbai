@@ -1,0 +1,33 @@
+﻿using ConsoleSnake.Domain;
+using System.Text;
+
+namespace ConsoleSnake.Rendering
+{
+    // ConsoleRenderer atlieka rėminį atvaizdavimą į System.Console.
+    // Jis naudoja dvimatį char bufferį, kuriame piešiama, o po to vienu metu pateikia tekstą į ekraną.
+    public sealed class ConsoleRenderer : IRenderer
+    {
+        private int _width;
+        private int _height;
+        private char[,] _buffer = new char[1, 1];
+
+        public void Initialize(int width, int height)
+        {
+            _width = width;
+            _height = height;
+
+            _buffer = new char[_height, _width];
+            Console.CursorVisible = false;
+
+            // Do NOT change the actual console window or buffer sizes here — that can cause OS-level
+            // resizing and leftover artifacts. We just clear the console once to remove old content.
+            try { Console.Clear(); } catch { }
+
+            Clear();
+        }
+
+        public void Clear()
+        {
+            for (int y = 0; y < _height; y++)
+                for (int x = 0; x < _width; x++)
+                    _buffer[y, x] = ' ';

@@ -1,0 +1,8 @@
+﻿namespace ConsoleSnake.Services
+{
+    public interface IHighScoreStore
+    {
+        int Load();
+        void Save(int hiScore);
+    }
+}

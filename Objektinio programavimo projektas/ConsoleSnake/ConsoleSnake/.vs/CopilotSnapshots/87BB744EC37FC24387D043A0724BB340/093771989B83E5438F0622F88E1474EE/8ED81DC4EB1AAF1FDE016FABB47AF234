@@ -1,0 +1,32 @@
+﻿using ConsoleSnake.Core;
+using ConsoleSnake.Input;
+using ConsoleSnake.Rendering;
+using ConsoleSnake.Services;
+using ConsoleSnake.UI;
+using ConsoleSnake.Domain;
+
+namespace ConsoleSnake
+{
+    internal static class Program
+    {
+        // `Main` now shows a small text menu to choose difficulty or view hi-scores.
+        static void Main()
+        {
+            IRenderer renderer = new ConsoleRenderer();
+            IInputSource input = new KeyboardInputSource();
+            IHighScoreStore store = new FileHighScoreStore("hiscore.txt");
+
+            var menu = new StartMenu(store);
+            var choice = menu.Show();
+            if (choice is null)
+                return; // user exited from menu
+
+            IProgressService progress = new ProgressService(store);
+
+            // Create Game with chosen difficulty
+            var game = new Game(renderer, input, progress, choice.Value);
+
+            game.Run();
+        }
+    }
+}

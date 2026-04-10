@@ -1,0 +1,58 @@
+﻿namespace ConsoleSnake.Domain
+{
+    // GameSettings laiko parametrus, tokius kaip plotis/aukštis, greitis, taskai už maistą ir milestone
+    public sealed class GameSettings
+    {
+        public int Width { get; init; } = 100;
+        public int Height { get; init; } = 20;
+
+        public int StartDelayMs { get; init; } = 150;
+        public int MinDelayMs { get; init; } = 50;
+        public int SpeedStepMs { get; init; } = 5;
+
+        public int PointsPerFood { get; init; } = 100;
+        public int MilestoneStep { get; init; } = 500;
+
+        public Difficulty Difficulty { get; init; } = Difficulty.Normal;
+
+        // Factory metodas: grąžina nustatymus pagal sunkumą (Easy/Normal/Hard)
+        public static GameSettings ForDifficulty(Difficulty d) =>
+            d switch
+            {
+                Difficulty.Easy => new GameSettings
+                {
+                    Width = 40,
+                    Height = 20,
+                    StartDelayMs = 200,
+                    MinDelayMs = 60,
+                    SpeedStepMs = 5,
+                    PointsPerFood = 10,
+                    MilestoneStep = 500,
+                    Difficulty = d
+                },
+                Difficulty.Normal => new GameSettings
+                {
+                    Width = 60,
+                    Height = 25,
+                    StartDelayMs = 140,
+                    MinDelayMs = 40,
+                    SpeedStepMs = 4,
+                    PointsPerFood = 10,
+                    MilestoneStep = 500,
+                    Difficulty = d
+                },
+                Difficulty.Hard => new GameSettings
+                {
+                    Width = 80,
+                    Height = 30,
+                    StartDelayMs = 90,
+                    MinDelayMs = 30,
+                    SpeedStepMs = 3,
+                    PointsPerFood = 10,
+                    MilestoneStep = 500,
+                    Difficulty = d
+                },
+                _ => throw new System.ArgumentOutOfRangeException()
+            };
+    }
+}

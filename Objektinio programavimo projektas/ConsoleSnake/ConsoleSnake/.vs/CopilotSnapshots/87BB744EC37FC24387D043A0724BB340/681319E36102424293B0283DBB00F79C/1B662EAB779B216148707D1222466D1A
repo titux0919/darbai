@@ -1,0 +1,95 @@
+﻿using ConsoleSnake.Domain;
+
+namespace ConsoleSnake.Rendering
+{
+    // ConsoleRenderer atlieka rėminį atvaizdavimą į System.Console.
+    // Jis naudoja dvimatį char bufferį, kuriame piešiama, o po to vienu metu pateikiama ekrane.
+    public sealed class ConsoleRenderer : IRenderer
+    {
+        private int _width;
+        private int _height;
+        private char[,] _buffer = new char[1, 1];
+
+        public void Initialize(int width, int height)
+        {
+            _width = width;
+            _height = height;
+
+            _buffer = new char[_height, _width];
+            Console.CursorVisible = false;
+
+            try
+            {
+                // bandom nustatyti bufferį / window size - ne visiškai leidžiama
+                Console.SetBufferSize(Math.Max(_width, Console.BufferWidth), Math.Max(_height, Console.BufferHeight));
+                Console.SetWindowSize(_width, _height);
+                Console.SetBufferSize(_width, _height);
+            }
+            catch { }
+
+            // Išvalome faktinį konsolės ekraną, kad atitiktų naujus matmenis
+            try { Console.Clear(); } catch { }
+
+            Clear();
+        }
+
+        public void Clear()
+        {
+            for (int y = 0; y < _height; y++)
+                for (int x = 0; x < _width; x++)
+                    _buffer[y, x] = ' ';
+        }
+
+        // Patikrina, ar pozicija yra ekrano ribose, tada piešia simbolį buferyje
+        public void DrawCell(Point position, char ch)
+        {
+            if (position.X < 0 || position.X >= _width) return;
+            if (position.Y < 0 || position.Y >= _height) return;
+            _buffer[position.Y, position.X] = ch;
+        }
+
+        // Piešia tekstą horizontaliai nuo pozicijos
+        public void DrawText(Point position, string text)
+        {
+            if (position.Y < 0 || position.Y >= _height) return;
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                int x = position.X + i;
+                if (x < 0 || x >= _width) continue;
+                _buffer[position.Y, x] = text[i];
+            }
+        }
+
+        // Išveda bufferį į Console (viena eilutė po kitos)
+        public void Present()
+        {
+            Console.SetCursorPosition(0, 0);
+
+            for (int y = 0; y < _height; y++)
+            {
+                for (int x = 0; x < _width; x++)
+                    Console.Write(_buffer[y, x]);
+
+                if (y < _height - 1) Console.WriteLine();
+            }
+
+            // Jeigu konsolės langas didesnis už mūsų bufferį, išvalome likusias eilutes
+            try
+            {
+                int consoleHeight = Console.WindowHeight;
+                if (consoleHeight > _height)
+                {
+                    for (int y = _height; y < consoleHeight; y++)
+                    {
+                        Console.WriteLine(new string(' ', Console.WindowWidth));
+                    }
+                }
+            }
+            catch
+            {
+                // ignoruojam, nes ne visada leidžiama arba reikalinga
+            }
+        }
+    }
+}

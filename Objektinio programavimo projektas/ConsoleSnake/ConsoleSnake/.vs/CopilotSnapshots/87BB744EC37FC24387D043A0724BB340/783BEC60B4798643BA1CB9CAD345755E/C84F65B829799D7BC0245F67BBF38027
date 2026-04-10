@@ -1,0 +1,20 @@
+﻿using ConsoleSnake.Core;
+using ConsoleSnake.Input;
+using ConsoleSnake.Rendering;
+using ConsoleSnake.Services;
+
+namespace ConsoleSnake
+{
+    internal static class Program
+    {
+        static void Main()
+        {
+            IRenderer renderer = new ConsoleRenderer();
+            IInputSource input = new KeyboardInputSource();
+            IHighScoreStore store = new FileHighScoreStore("hiscore.txt");
+
+            var game = new Game(renderer, input, store);
+            game.Run();
+        }
+    }
+}

@@ -1,0 +1,15 @@
+﻿namespace ConsoleSnake.Domain
+{
+    // Paprastas Point modelis X/Y koordinatėms
+    public readonly record struct Point(int X, int Y)
+    {
+        public Point Move(Point direction) => new(X + direction.X, Y + direction.Y);
+
+        // Overridina equality kad galėtume palyginti pozicijas "p == other" 
+        public static bool operator ==(Point a, Point b) => a.X == b.X && a.Y == b.Y;
+        public static bool operator !=(Point a, Point b) => !(a == b);
+
+        public override bool Equals(object? obj) => obj is Point p && this == p;
+        public override int GetHashCode() => HashCode.Combine(X, Y);
+    }
+}

@@ -1,0 +1,14 @@
+﻿namespace ConsoleSnake.Input
+{
+    public enum GameCommand
+    {
+        Exit,
+        TogglePause,
+        Restart,
+        DifficultyEasy,
+        DifficultyNormal,
+        DifficultyHard,
+        ToggleHelp,
+        ClearHiScores
+    }
+}

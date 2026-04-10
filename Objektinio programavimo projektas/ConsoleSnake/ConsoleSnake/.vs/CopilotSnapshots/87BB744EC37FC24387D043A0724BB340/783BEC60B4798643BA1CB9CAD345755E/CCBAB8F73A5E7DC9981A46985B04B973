@@ -1,0 +1,43 @@
+﻿namespace ConsoleSnake.Domain
+{
+    public sealed class GameSettings
+    {
+        public int Width { get; init; } = 100;
+        public int Height { get; init; } = 20;
+
+        public int StartDelayMs { get; init; } = 150;
+        public int MinDelayMs { get; init; } = 50;
+        public int SpeedStepMs { get; init; } = 5;
+
+        public int PointsPerFood { get; init; } = 100;
+        public int MilestoneStep { get; init; } = 500;
+
+        public Difficulty Difficulty { get; init; } = Difficulty.Normal;
+
+        public static GameSettings ForDifficulty(Difficulty d) =>
+            d switch
+            {
+                Difficulty.Easy => new GameSettings
+                {
+                    Difficulty = Difficulty.Easy,
+                    StartDelayMs = 170,
+                    MinDelayMs = 70,
+                    SpeedStepMs = 4
+                },
+                Difficulty.Hard => new GameSettings
+                {
+                    Difficulty = Difficulty.Hard,
+                    StartDelayMs = 130,
+                    MinDelayMs = 45,
+                    SpeedStepMs = 6
+                },
+                _ => new GameSettings
+                {
+                    Difficulty = Difficulty.Normal,
+                    StartDelayMs = 150,
+                    MinDelayMs = 50,
+                    SpeedStepMs = 5
+                }
+            };
+    }
+}

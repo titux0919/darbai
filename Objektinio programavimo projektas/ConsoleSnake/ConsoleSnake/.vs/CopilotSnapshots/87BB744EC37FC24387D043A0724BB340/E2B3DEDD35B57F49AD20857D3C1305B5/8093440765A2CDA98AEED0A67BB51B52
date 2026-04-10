@@ -1,0 +1,13 @@
+﻿using ConsoleSnake.Domain;
+
+namespace ConsoleSnake.Rendering
+{
+    public interface IRenderer
+    {
+        void Initialize(int width, int height);
+        void Clear();
+        void DrawCell(Point position, char ch);
+        void DrawText(Point position, string text);
+        void Present();
+    }
+}

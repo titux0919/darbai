@@ -1,0 +1,10 @@
+﻿using ConsoleSnake.Domain;
+
+namespace ConsoleSnake.Input
+{
+    public readonly struct InputSnapshot
+    {
+        public Direction? Direction { get; init; }
+        public GameCommand? Command { get; init; }
+    }
+}

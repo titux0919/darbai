@@ -1,0 +1,406 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\core\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\core\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\rendering\\irenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\rendering\\irenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\rendering\\consolerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\rendering\\consolerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\input\\iinputsource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\input\\iinputsource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\input\\keyboardinputsource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\input\\keyboardinputsource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\services\\filehighscorestore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\services\\filehighscorestore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\services\\ihighscorestore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\services\\ihighscorestore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\services\\progressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\services\\progressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\domain\\gamesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\domain\\gamesettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\input\\inputsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\input\\inputsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\input\\gamecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\input\\gamecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\domain\\snake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\domain\\snake.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\domain\\point.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\domain\\point.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\domain\\direction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\domain\\direction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\domain\\difficulty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\domain\\difficulty.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\core\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\core\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\core\\gameresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\core\\gameresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\services\\iprogressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\services\\iprogressservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Titas\\Desktop\\ConsoleSnake\\ConsoleSnake.Tests\\ProgressServiceTests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Titas\\Desktop\\ConsoleSnake\\ConsoleSnake.Tests\\ConsoleSnake.Tests.csproj||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Titas\\Desktop\\ConsoleSnake\\REPORT.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Titas\\Desktop\\ConsoleSnake\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|c:\\users\\titas\\downloads\\consolesnake\\consolesnake\\consolesnake\\consolesnake.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A7042551-D00C-3CC0-1482-6828E1EA323D}|ConsoleSnake\\ConsoleSnake.csproj|solutionrelative:consolesnake\\consolesnake.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Core\\Game.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Core\\Game.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Core\\Game.cs",
+              "RelativeToolTip": "ConsoleSnake\\Core\\Game.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAADwvw4AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T10:06:50.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Program.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Program.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Program.cs",
+              "RelativeToolTip": "ConsoleSnake\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T10:01:01.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "KeyboardInputSource.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Input\\KeyboardInputSource.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Input\\KeyboardInputSource.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Input\\KeyboardInputSource.cs",
+              "RelativeToolTip": "ConsoleSnake\\Input\\KeyboardInputSource.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T10:05:47.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IInputSource.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Input\\IInputSource.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Input\\IInputSource.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Input\\IInputSource.cs",
+              "RelativeToolTip": "ConsoleSnake\\Input\\IInputSource.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T10:05:30Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConsoleRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Rendering\\ConsoleRenderer.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Rendering\\ConsoleRenderer.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Rendering\\ConsoleRenderer.cs",
+              "RelativeToolTip": "ConsoleSnake\\Rendering\\ConsoleRenderer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T10:06:23.351Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Rendering\\IRenderer.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Rendering\\IRenderer.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Rendering\\IRenderer.cs",
+              "RelativeToolTip": "ConsoleSnake\\Rendering\\IRenderer.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T10:06:06.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FileHighScoreStore.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Services\\FileHighScoreStore.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Services\\FileHighScoreStore.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Services\\FileHighScoreStore.cs",
+              "RelativeToolTip": "ConsoleSnake\\Services\\FileHighScoreStore.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-01T13:56:58.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IHighScoreStore.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Services\\IHighScoreStore.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Services\\IHighScoreStore.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Services\\IHighScoreStore.cs",
+              "RelativeToolTip": "ConsoleSnake\\Services\\IHighScoreStore.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAAAMAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-01T13:56:39.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProgressService.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Services\\ProgressService.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Services\\ProgressService.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Services\\ProgressService.cs",
+              "RelativeToolTip": "ConsoleSnake\\Services\\ProgressService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAywBwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T11:47:33.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GameSettings.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Domain\\GameSettings.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Domain\\GameSettings.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Domain\\GameSettings.cs",
+              "RelativeToolTip": "ConsoleSnake\\Domain\\GameSettings.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-01T20:24:15.623Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Snake.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Domain\\Snake.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Domain\\Snake.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Domain\\Snake.cs",
+              "RelativeToolTip": "ConsoleSnake\\Domain\\Snake.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T16:19:17.693Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Difficulty.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Domain\\Difficulty.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Domain\\Difficulty.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Domain\\Difficulty.cs",
+              "RelativeToolTip": "ConsoleSnake\\Domain\\Difficulty.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-01T20:24:28.505Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Direction.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Domain\\Direction.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Domain\\Direction.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Domain\\Direction.cs",
+              "RelativeToolTip": "ConsoleSnake\\Domain\\Direction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T10:04:37.931Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Point.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Domain\\Point.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Domain\\Point.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Domain\\Point.cs",
+              "RelativeToolTip": "ConsoleSnake\\Domain\\Point.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-19T10:04:17.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GameCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Input\\GameCommand.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Input\\GameCommand.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Input\\GameCommand.cs",
+              "RelativeToolTip": "ConsoleSnake\\Input\\GameCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-01T19:44:12.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "InputSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Input\\InputSnapshot.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Input\\InputSnapshot.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Input\\InputSnapshot.cs",
+              "RelativeToolTip": "ConsoleSnake\\Input\\InputSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-01T19:44:41.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Core\\MainMenu.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Core\\MainMenu.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Core\\MainMenu.cs",
+              "RelativeToolTip": "ConsoleSnake\\Core\\MainMenu.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAQwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T08:32:49.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GameResult.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Core\\GameResult.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Core\\GameResult.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Core\\GameResult.cs",
+              "RelativeToolTip": "ConsoleSnake\\Core\\GameResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-11T08:39:25.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IProgressService.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Services\\IProgressService.cs",
+              "RelativeDocumentMoniker": "ConsoleSnake\\Services\\IProgressService.cs",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\Services\\IProgressService.cs",
+              "RelativeToolTip": "ConsoleSnake\\Services\\IProgressService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T11:51:10.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ProgressServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\Titas\\Desktop\\ConsoleSnake\\ConsoleSnake.Tests\\ProgressServiceTests.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\Desktop\\ConsoleSnake\\ConsoleSnake.Tests\\ProgressServiceTests.cs",
+              "ToolTip": "C:\\Users\\Titas\\Desktop\\ConsoleSnake\\ConsoleSnake.Tests\\ProgressServiceTests.cs",
+              "RelativeToolTip": "..\\..\\..\\Desktop\\ConsoleSnake\\ConsoleSnake.Tests\\ProgressServiceTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-08T12:46:16.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ConsoleSnake.Tests.csproj",
+              "DocumentMoniker": "C:\\Users\\Titas\\Desktop\\ConsoleSnake\\ConsoleSnake.Tests\\ConsoleSnake.Tests.csproj",
+              "RelativeDocumentMoniker": "..\\..\\..\\Desktop\\ConsoleSnake\\ConsoleSnake.Tests\\ConsoleSnake.Tests.csproj",
+              "ToolTip": "C:\\Users\\Titas\\Desktop\\ConsoleSnake\\ConsoleSnake.Tests\\ConsoleSnake.Tests.csproj",
+              "RelativeToolTip": "..\\..\\..\\Desktop\\ConsoleSnake\\ConsoleSnake.Tests\\ConsoleSnake.Tests.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-01-08T12:46:06.882Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "REPORT.md",
+              "DocumentMoniker": "C:\\Users\\Titas\\Desktop\\ConsoleSnake\\REPORT.md",
+              "RelativeDocumentMoniker": "..\\..\\..\\Desktop\\ConsoleSnake\\REPORT.md",
+              "ToolTip": "C:\\Users\\Titas\\Desktop\\ConsoleSnake\\REPORT.md",
+              "RelativeToolTip": "..\\..\\..\\Desktop\\ConsoleSnake\\REPORT.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-01-08T12:06:54.653Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "README.md",
+              "DocumentMoniker": "C:\\Users\\Titas\\Desktop\\ConsoleSnake\\README.md",
+              "RelativeDocumentMoniker": "..\\..\\..\\Desktop\\ConsoleSnake\\README.md",
+              "ToolTip": "C:\\Users\\Titas\\Desktop\\ConsoleSnake\\README.md",
+              "RelativeToolTip": "..\\..\\..\\Desktop\\ConsoleSnake\\README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2026-01-08T12:06:43.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ConsoleSnake.csproj",
+              "DocumentMoniker": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake.csproj",
+              "RelativeDocumentMoniker": "ConsoleSnake\\ConsoleSnake.csproj",
+              "ToolTip": "C:\\Users\\Titas\\Downloads\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake\\ConsoleSnake.csproj",
+              "RelativeToolTip": "ConsoleSnake\\ConsoleSnake.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-12-19T10:03:11.042Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
