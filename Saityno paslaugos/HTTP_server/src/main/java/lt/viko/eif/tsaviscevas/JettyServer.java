@@ -31,6 +31,9 @@ public class JettyServer {
         servletHandler.addServletWithMapping(JettyStatusServlet.class, "/status");
         servletHandler.addServletWithMapping(JettyHTMLServlet.class,"/html");
         servletHandler.addServletWithMapping(JettyHTMLServletForms.class,"/forms");
+        servletHandler.addServletWithMapping(JettyMainServlet.class,"/main");
+        servletHandler.addServletWithMapping(JettyPdfStaticServlet.class,"/pdf/static");
+        servletHandler.addServletWithMapping(JettyPdfServlet.class,"/pdf");
 
         server.start();
         server.join();
