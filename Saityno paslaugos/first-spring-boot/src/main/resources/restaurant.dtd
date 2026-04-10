@@ -1,0 +1,10 @@
+<!ELEMENT restaurant (name, menuItems)>
+
+        <!ELEMENT name (#PCDATA)>
+
+        <!ELEMENT menuItems (menuItem+)>
+
+        <!ELEMENT menuItem (name, price, available)>
+
+        <!ELEMENT price (#PCDATA)>
+        <!ELEMENT available (#PCDATA)>

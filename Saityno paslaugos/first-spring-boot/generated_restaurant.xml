@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restaurant>
+    <menuItems>
+        <menuItem>
+            <available>true</available>
+            <name>Pizza</name>
+            <price>9.99</price>
+        </menuItem>
+        <menuItem>
+            <available>true</available>
+            <name>Pasta</name>
+            <price>8.5</price>
+        </menuItem>
+        <menuItem>
+            <available>true</available>
+            <name>Burger</name>
+            <price>7.9</price>
+        </menuItem>
+        <menuItem>
+            <available>true</available>
+            <name>Salad</name>
+            <price>5.5</price>
+        </menuItem>
+        <menuItem>
+            <available>true</available>
+            <name>Soup</name>
+            <price>4.8</price>
+        </menuItem>
+        <menuItem>
+            <available>true</available>
+            <name>Steak</name>
+            <price>15.0</price>
+        </menuItem>
+        <menuItem>
+            <available>true</available>
+            <name>Fish</name>
+            <price>12.4</price>
+        </menuItem>
+        <menuItem>
+            <available>true</available>
+            <name>Chicken Wings</name>
+            <price>9.2</price>
+        </menuItem>
+        <menuItem>
+            <available>true</available>
+            <name>Ice Cream</name>
+            <price>3.9</price>
+        </menuItem>
+        <menuItem>
+            <available>true</available>
+            <name>Coffee</name>
+            <price>2.5</price>
+        </menuItem>
+    </menuItems>
+    <name>City Restaurant</name>
+</restaurant>
