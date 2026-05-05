@@ -1,0 +1,55 @@
+<movies>
+    <movie>
+        <title>Inception</title>
+        <year>2010</year>
+        <rating>8.8</rating>
+        <popular>true</popular>
+        <category>A</category>
+        <actors>
+            <actor>
+                <name>John Darkwood</name>
+                <age>40</age>
+            </actor>
+            <actor>
+                <name>Emma Stonefield</name>
+                <age>35</age>
+            </actor>
+        </actors>
+    </movie>
+
+    <movie>
+        <title>Shadow City</title>
+        <year>2015</year>
+        <rating>7.5</rating>
+        <popular>false</popular>
+        <category>B</category>
+        <actors>
+            <actor>
+                <name>Anna Night</name>
+                <age>30</age>
+            </actor>
+            <actor>
+                <name>Chris Black</name>
+                <age>42</age>
+            </actor>
+        </actors>
+    </movie>
+
+    <movie>
+        <title>Future War</title>
+        <year>2022</year>
+        <rating>9.1</rating>
+        <popular>true</popular>
+        <category>A</category>
+        <actors>
+            <actor>
+                <name>Mike Storm</name>
+                <age>38</age>
+            </actor>
+            <actor>
+                <name>Lisa Ray</name>
+                <age>29</age>
+            </actor>
+        </actors>
+    </movie>
+</movies>
