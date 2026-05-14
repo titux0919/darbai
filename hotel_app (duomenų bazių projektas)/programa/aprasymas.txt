@@ -1,0 +1,37 @@
+Sistemos aprasymas
+
+Pagrindinis langas:
+
+Prisijungimas, registracija, profilio pildymas.
+
+Roles:
+a) ADMIN
+User: admin, password: admin
+
+1. Įvesti kambario duomenis (tipas, numeris, aukstas)
+2. Valdyti rezervacijas (tvirtinti užsakymus)
+3. Pildyti balansus kitiems vartotojams
+4. Įvesti viešbučių kainas.
+5. Laisvumas (įvesti laisvus kambarius rezervacijoms)
+6. Prognozes (Supildome konkurentu kainas su ta pacia kambario specifikacija ir matysime prognozes)
+7. Kambario tipų valdymas (Liuksas, Dvivietis ir t.t) (* Ivesti duomenis galima, bet niekur nenaudojama)
+8. Patogumu valdymas (Wifi, skalbimo masina ir t.t) (* Ivesti duomenis galima, bet niekur nenaudojama)
+9. Saliu valdymas (* Ivesti duomenis galima, bet niekur nenaudojama)
+10. Sventines dienos (Kai ivesta sventine diena, pagal kainos multiplier nustatomas kainos padidejimas viesbucio rezervacijai)
+11. Sezonu valdymas (Itaka kainoms, pvz festivaliai, vasara ir t.t)
+
+b) User
+User: user, password: user
+
+1. Gali ieskoti viesbuciu pagal pavadinima, zvaigzdutes, rezervacijos data.
+2. Rezervuoti viesbucius
+3. Matyti viesbucio patogumus (jei tokie yra)
+
+c) Buhalteris
+User: buhalteris, password: buhalteris
+
+1. Mato mokejimus
+2. Gali pildyti vartotojo balanca
+
+Igyvendinta mazdaug 70% idejos.
+

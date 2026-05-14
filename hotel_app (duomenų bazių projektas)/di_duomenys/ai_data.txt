@@ -1,0 +1,312 @@
+Uzklausa: Sugeneruok MySQL INSERT sakinius viešbučių rezervavimo duomenų bazei. Lentelės: country, customer, hotel, room_type, room, room_price, availability, booking, payment, competitor_price, season, holiday, facility, hotel_facility, price_prediction, app_user, role. Kiekvienai lentelei sugeneruok po 100 prasmingų įrašų. Laikykis užsienio raktų priklausomybių. Naudok realistiškus Lietuvos miestus, viešbučių pavadinimus, klientų vardus, datas 2026 metais, kainas EUR. Nenaudok pasikartojančių UNIQUE reikšmių. Pateik tik SQL kodą.
+
+SQL:
+
+START TRANSACTION;
+
+INSERT INTO role (role_id, name)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    CONCAT('role_', LPAD(n, 3, '0'))
+FROM seq;
+
+INSERT INTO country (country_id, country_name, country_code, currency, timezone)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    CASE MOD(n, 10)
+        WHEN 0 THEN 'Lietuva'
+        WHEN 1 THEN 'Latvija'
+        WHEN 2 THEN 'Estija'
+        WHEN 3 THEN 'Lenkija'
+        WHEN 4 THEN 'Vokietija'
+        WHEN 5 THEN 'Prancūzija'
+        WHEN 6 THEN 'Italija'
+        WHEN 7 THEN 'Ispanija'
+        WHEN 8 THEN 'Suomija'
+        ELSE 'Švedija'
+    END,
+    CONCAT('C', LPAD(n, 3, '0')),
+    'EUR',
+    'Europe/Vilnius'
+FROM seq;
+
+INSERT INTO room_type (room_type_id, name, description, base_capacity)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    CONCAT(
+        CASE MOD(n, 5)
+            WHEN 0 THEN 'Standartinis'
+            WHEN 1 THEN 'Dvivietis'
+            WHEN 2 THEN 'Šeimyninis'
+            WHEN 3 THEN 'Liuksas'
+            ELSE 'Verslo klasės'
+        END,
+        ' kambarys ', LPAD(n, 3, '0')
+    ),
+    CONCAT('Patogus viešbučio kambarys su pagrindiniais patogumais, numeris ', n),
+    CASE MOD(n, 5)
+        WHEN 0 THEN 1
+        WHEN 1 THEN 2
+        WHEN 2 THEN 4
+        WHEN 3 THEN 3
+        ELSE 2
+    END
+FROM seq;
+
+INSERT INTO facility (facility_id, name, description)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    CONCAT(
+        CASE MOD(n, 10)
+            WHEN 0 THEN 'WiFi'
+            WHEN 1 THEN 'SPA zona'
+            WHEN 2 THEN 'Baseinas'
+            WHEN 3 THEN 'Sporto salė'
+            WHEN 4 THEN 'Pusryčiai'
+            WHEN 5 THEN 'Automobilių aikštelė'
+            WHEN 6 THEN 'Konferencijų salė'
+            WHEN 7 THEN 'Restoranas'
+            WHEN 8 THEN 'Oro kondicionierius'
+            ELSE 'Vaikų žaidimų zona'
+        END,
+        ' ', LPAD(n, 3, '0')
+    ),
+    CONCAT('Viešbučio paslauga arba patogumas klientams, įrašo numeris ', n)
+FROM seq;
+
+INSERT INTO customer
+(customer_id, country_id, first_name, last_name, email, phone, created_at, balance)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    1000 + n,
+    ELT(MOD(n, 10) + 1, 'Jonas', 'Mantas', 'Lukas', 'Tomas', 'Dovydas', 'Austėja', 'Ieva', 'Gabija', 'Monika', 'Rūta'),
+    ELT(MOD(n, 10) + 1, 'Kazlauskas', 'Petrauskas', 'Jankauskas', 'Stankevičius', 'Žukauskas', 'Vaitkus', 'Paulauskaitė', 'Balčiūnaitė', 'Butkutė', 'Navickaitė'),
+    CONCAT('klientas', LPAD(n, 3, '0'), '@pastas.lt'),
+    CONCAT('+3706', LPAD(1000000 + n, 7, '0')),
+    DATE_ADD('2026-01-01 10:00:00', INTERVAL n DAY),
+    ROUND(20 + MOD(n * 13, 500), 2)
+FROM seq;
+
+INSERT INTO hotel
+(hotel_id, country_id, name, city, address, star_rating, created_at)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    1000 + n,
+    CONCAT(
+        ELT(MOD(n, 10) + 1, 'Vilniaus Perlas', 'Kauno Santaka', 'Klaipėdos Banga', 'Palangos Saulė', 'Trakų Pilis', 'Druskininkų Pušynas', 'Šiaulių Auksas', 'Nidos Kopos', 'Birštono Versmė', 'Anykščių Šilas'),
+        ' ', LPAD(n, 3, '0')
+    ),
+    ELT(MOD(n, 10) + 1, 'Vilnius', 'Kaunas', 'Klaipėda', 'Palanga', 'Trakai', 'Druskininkai', 'Šiauliai', 'Nida', 'Birštonas', 'Anykščiai'),
+    CONCAT('Viešbučių g. ', n),
+    1 + MOD(n, 5),
+    DATE_ADD('2026-01-01 09:00:00', INTERVAL n DAY)
+FROM seq;
+
+INSERT INTO app_user
+(user_id, role_id, username, email, password_hash)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    1000 + n,
+    CONCAT('vartotojas_', LPAD(n, 3, '0')),
+    CONCAT('vartotojas', LPAD(n, 3, '0'), '@hotel.lt'),
+    CONCAT('$2a$12$generatedhash', LPAD(n, 3, '0'), 'abcdefghijklmnop')
+FROM seq;
+
+INSERT INTO room
+(room_id, hotel_id, room_type_id, room_number, floor, status)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    1000 + n,
+    1000 + n,
+    CONCAT(1 + MOD(n, 9), LPAD(n, 2, '0')),
+    1 + MOD(n, 9),
+    ELT(MOD(n, 4) + 1, 'available', 'available', 'maintenance', 'inactive')
+FROM seq;
+
+INSERT INTO room_price
+(price_id, hotel_id, room_type_id, price, currency, valid_from, valid_to)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    1000 + n,
+    1000 + n,
+    ROUND(55 + MOD(n * 17, 190), 2),
+    'EUR',
+    DATE_ADD('2026-01-01', INTERVAL MOD(n, 60) DAY),
+    DATE_ADD('2026-12-31', INTERVAL 0 DAY)
+FROM seq;
+
+INSERT INTO availability
+(availability_id, hotel_id, room_type_id, date, available_rooms, total_rooms)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    1000 + n,
+    1000 + n,
+    DATE_ADD('2026-06-01', INTERVAL MOD(n, 90) DAY),
+    10 + MOD(n, 15),
+    25
+FROM seq;
+
+INSERT INTO season
+(season_id, hotel_id, name, start_date, end_date, price_multiplier)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    1000 + n,
+    CONCAT(
+        ELT(MOD(n, 4) + 1, 'Pavasario sezonas', 'Vasaros sezonas', 'Rudens sezonas', 'Žiemos sezonas'),
+        ' ', LPAD(n, 3, '0')
+    ),
+    DATE_ADD('2026-01-01', INTERVAL MOD(n * 3, 250) DAY),
+    DATE_ADD(DATE_ADD('2026-01-01', INTERVAL MOD(n * 3, 250) DAY), INTERVAL 30 DAY),
+    ROUND(1.00 + MOD(n, 6) * 0.05, 2)
+FROM seq;
+
+INSERT INTO holiday
+(holiday_id, country_id, holiday_name, holiday_date, is_public_holiday, price_multiplier)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    1000 + n,
+    CONCAT(
+        ELT(MOD(n, 8) + 1, 'Naujieji metai', 'Valstybės diena', 'Joninės', 'Kalėdos', 'Velykų savaitgalis', 'Miesto šventė', 'Kurorto festivalis', 'Kultūros diena'),
+        ' ', LPAD(n, 3, '0')
+    ),
+    DATE_ADD('2026-01-01', INTERVAL MOD(n * 11, 360) DAY),
+    1,
+    ROUND(1.05 + MOD(n, 5) * 0.05, 2)
+FROM seq;
+
+INSERT INTO hotel_facility
+(hotel_facility_id, hotel_id, facility_id)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    1000 + n,
+    1000 + n
+FROM seq;
+
+INSERT INTO competitor_price
+(competitor_price_id, hotel_id, room_type_id, date, competitor_name, price, currency)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    1000 + n,
+    1000 + n,
+    DATE_ADD('2026-06-01', INTERVAL MOD(n, 90) DAY),
+    CONCAT(
+        ELT(MOD(n, 6) + 1, 'BookingMarket', 'TravelGo', 'BalticStay', 'CityRooms', 'HolidayNet', 'HotelCompare'),
+        ' ', LPAD(n, 3, '0')
+    ),
+    ROUND(60 + MOD(n * 19, 210), 2),
+    'EUR'
+FROM seq;
+
+INSERT INTO booking
+(booking_id, customer_id, room_id, check_in, check_out, guests_count, booking_date, total_price, status)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    1000 + n,
+    1000 + n,
+    DATE_ADD('2026-06-01', INTERVAL MOD(n, 90) DAY),
+    DATE_ADD(DATE_ADD('2026-06-01', INTERVAL MOD(n, 90) DAY), INTERVAL 1 + MOD(n, 5) DAY),
+    1 + MOD(n, 4),
+    DATE_ADD('2026-05-01 12:00:00', INTERVAL n DAY),
+    ROUND((55 + MOD(n * 17, 190)) * (1 + MOD(n, 5)), 2),
+    ELT(MOD(n, 5) + 1, 'pending', 'confirmed', 'completed', 'cancelled', 'no_show')
+FROM seq;
+
+INSERT INTO payment
+(payment_id, booking_id, amount, payment_date, payment_method, status)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    1000 + n,
+    ROUND((55 + MOD(n * 17, 190)) * (1 + MOD(n, 5)), 2),
+    DATE_ADD('2026-05-01 13:00:00', INTERVAL n DAY),
+    ELT(MOD(n, 5) + 1, 'cash', 'card', 'bank_transfer', 'paypal', 'other'),
+    ELT(MOD(n, 4) + 1, 'pending', 'paid', 'failed', 'refunded')
+FROM seq;
+
+INSERT INTO price_prediction
+(prediction_id, hotel_id, room_type_id, prediction_date, target_date, base_price,
+ season_multiplier, holiday_multiplier, avg_competitor_price, predicted_price,
+ confidence_score, model_version)
+WITH RECURSIVE seq AS (
+    SELECT 1 AS n
+    UNION ALL SELECT n + 1 FROM seq WHERE n < 100
+)
+SELECT
+    1000 + n,
+    1000 + n,
+    1000 + n,
+    DATE_ADD('2026-05-01 08:00:00', INTERVAL n DAY),
+    DATE_ADD('2026-06-01', INTERVAL MOD(n, 90) DAY),
+    ROUND(55 + MOD(n * 17, 190), 2),
+    ROUND(1.00 + MOD(n, 6) * 0.05, 2),
+    ROUND(1.05 + MOD(n, 5) * 0.05, 2),
+    ROUND(60 + MOD(n * 19, 210), 2),
+    ROUND((55 + MOD(n * 17, 190)) * (1.00 + MOD(n, 6) * 0.05) * (1.05 + MOD(n, 5) * 0.05), 2),
+    ROUND(0.70 + MOD(n, 25) / 100, 2),
+    'ai_generated_v1'
+FROM seq;
+
+COMMIT;
